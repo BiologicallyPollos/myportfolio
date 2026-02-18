@@ -4,11 +4,18 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-  // Simple animation settings
-  const fadeProps = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
+  // Using a simplified transition object to satisfy strict Type checking
+  const slideFromLeft = {
+    initial: { opacity: 0, x: -40 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.8 }
+  };
+
+  const slideFromRight = {
+    initial: { opacity: 0, x: 40 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true, margin: "-100px" },
     transition: { duration: 0.8 }
   };
 
@@ -24,11 +31,11 @@ export default function Home() {
             backgroundSize: 'cover',
             backgroundPosition: 'center',
           }}
-        />
-
+        ></div>
+        
         <motion.div 
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
+          initial={{ opacity: 0, scale: 0.98 }}
+          animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1.5 }}
           className="z-10 text-center px-4"
         >
@@ -44,50 +51,50 @@ export default function Home() {
       {/* Content Sections */}
       <div className="max-w-5xl mx-auto px-6 space-y-40 pb-40">
         
-        {/* Videos Section */}
-        <motion.section {...fadeProps} className="space-y-10 pt-20">
+        {/* 01. Visuals - Slide from Left */}
+        <motion.section {...slideFromLeft} className="space-y-10 pt-20">
           <h2 className="text-sm font-bold tracking-[0.3em] text-emerald-500 uppercase">01. Visuals</h2>
-          <div className="aspect-video w-full rounded-3xl overflow-hidden bg-emerald-900/20 border border-white/10">
-            <video autoPlay muted loop playsInline className="w-full h-full object-cover grayscale brightness-50">
+          <div className="aspect-video w-full rounded-3xl overflow-hidden bg-emerald-900/20 border border-white/10 shadow-2xl">
+            <video autoPlay muted loop playsInline className="w-full h-full object-cover grayscale brightness-50 hover:grayscale-0 transition-all duration-1000">
               <source src="https://assets.mixkit.co/videos/preview/mixkit-panning-over-a-british-flag-on-top-of-a-building-34244-large.mp4" type="video/mp4" />
             </video>
           </div>
         </motion.section>
 
-        {/* Speeches Section */}
-        <motion.section {...fadeProps} className="space-y-10">
+        {/* 02. Speeches - Slide from Right */}
+        <motion.section {...slideFromRight} className="space-y-10">
           <h2 className="text-sm font-bold tracking-[0.3em] text-emerald-500 uppercase">02. Speeches</h2>
           <div className="grid md:grid-cols-2 gap-8">
-            <div className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-emerald-500/50 transition-colors">
-              <span className="text-emerald-500 font-mono text-xs mb-4 block">FEB 2026</span>
+            <div className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-emerald-500/50 transition-all duration-500 hover:bg-white/[0.05]">
+              <span className="text-emerald-500 font-mono text-xs mb-4 block tracking-widest uppercase">Feb 2026</span>
               <h3 className="text-2xl font-bold mb-3">Strategic Efficiency</h3>
-              <p className="text-white/40">Keynote on legislative frameworks.</p>
+              <p className="text-white/40 leading-relaxed">Keynote on legislative frameworks and project delivery.</p>
             </div>
-            <div className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-emerald-500/50 transition-colors">
-              <span className="text-emerald-500 font-mono text-xs mb-4 block">JAN 2026</span>
+            <div className="p-10 rounded-3xl bg-white/[0.03] border border-white/10 hover:border-emerald-500/50 transition-all duration-500 hover:bg-white/[0.05]">
+              <span className="text-emerald-500 font-mono text-xs mb-4 block tracking-widest uppercase">Jan 2026</span>
               <h3 className="text-2xl font-bold mb-3">Digital Westminster</h3>
-              <p className="text-white/40">A roadmap for technological integration.</p>
+              <p className="text-white/40 leading-relaxed">A roadmap for technological integration in public sectors.</p>
             </div>
           </div>
         </motion.section>
 
-        {/* Op-Eds Section */}
-        <motion.section {...fadeProps} className="space-y-10">
+        {/* 03. Writing - Slide from Left */}
+        <motion.section {...slideFromLeft} className="space-y-10">
           <h2 className="text-sm font-bold tracking-[0.3em] text-emerald-500 uppercase">03. Writing</h2>
-          <div className="p-12 rounded-[40px] bg-emerald-500/5 border border-white/5">
-            <h3 className="text-4xl font-bold mb-6 italic tracking-tight text-emerald-50/90">
+          <div className="p-12 rounded-[40px] bg-gradient-to-br from-emerald-500/10 to-transparent border border-white/5 group transition-all duration-700 hover:border-emerald-500/30">
+            <h3 className="text-4xl font-bold mb-6 italic tracking-tight text-emerald-50/90 leading-tight">
               "The verifiable truth about digital infrastructure."
             </h3>
-            <p className="text-white/50 uppercase tracking-widest text-xs">The Spectator • 2026</p>
+            <p className="text-white/30 uppercase tracking-[0.3em] text-[10px] font-bold">The Spectator • 2026</p>
           </div>
         </motion.section>
 
-        {/* Footer */}
-        <motion.footer {...fadeProps} className="pt-20 flex flex-col items-center">
+        {/* Footer / LinkedIn - Slide from Right */}
+        <motion.footer {...slideFromRight} className="pt-20 flex flex-col items-center">
           <a 
             href="https://linkedin.com/in/your-profile" 
             target="_blank" 
-            className="px-10 py-5 bg-white text-black rounded-full font-bold hover:scale-105 transition-transform"
+            className="px-10 py-5 bg-white text-black rounded-full font-bold hover:bg-emerald-50 transition-all shadow-xl hover:shadow-emerald-500/20 active:scale-95"
           >
             Connect on LinkedIn
           </a>
