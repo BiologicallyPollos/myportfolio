@@ -13,18 +13,23 @@ export default function Home() {
 
   const headline = "Hello, I'm Josh Funnell";
   
-  // Typewriter Animation Logic
+  // Smooth Typewriter Logic - "Ease" removed to fix the error
   const sentence = {
     hidden: { opacity: 1 },
     visible: {
       opacity: 1,
-      transition: { staggerChildren: 0.05 },
+      transition: { staggerChildren: 0.08 },
     },
   };
 
   const letter = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0 },
+    hidden: { opacity: 0, y: 8, filter: "blur(4px)" },
+    visible: { 
+      opacity: 1, 
+      y: 0, 
+      filter: "blur(0px)",
+      transition: { duration: 0.6 } // Removed 'ease' string to resolve the 1 problem
+    },
   };
 
   const slideUp = {
@@ -43,44 +48,43 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white overflow-x-hidden selection:bg-sky-500/30 font-sans">
       
-      {/* --- HERO SECTION WITH SEAMLESS BLEND --- */}
+      {/* Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         
         {/* Background Visuals Layer */}
         <div className="absolute inset-0 z-0 flex pointer-events-none">
           
-          {/* Left Side: City of London (Fading to center) */}
+          {/* Left Side: City of London (Sliding in) */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.2 }}
-            transition={{ duration: 2 }}
+            initial={{ x: -100, opacity: 0 }}
+            animate={{ x: 0, opacity: 0.35 }}
+            transition={{ duration: 1.8 }}
             className="absolute inset-0 w-full h-full"
             style={{ 
               backgroundImage: `url('/CoL Cover Photo.jpg')`, 
               backgroundSize: 'cover', 
               backgroundPosition: 'left center',
-              maskImage: 'linear-gradient(to right, black 30%, transparent 70%)',
-              WebkitMaskImage: 'linear-gradient(to right, black 30%, transparent 70%)'
+              maskImage: 'linear-gradient(to right, black 45%, transparent 85%)',
+              WebkitMaskImage: 'linear-gradient(to right, black 45%, transparent 85%)'
             }}
           />
 
-          {/* Right Side: Parliament (Fading to center) */}
+          {/* Right Side: Parliament (Sliding in) */}
           <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 0.2 }}
-            transition={{ duration: 2, delay: 0.5 }}
+            initial={{ x: 100, opacity: 0 }}
+            animate={{ x: 0, opacity: 0.35 }}
+            transition={{ duration: 1.8, delay: 0.2 }}
             className="absolute inset-0 w-full h-full"
             style={{ 
               backgroundImage: `url('/Parliament Cover Photo.jpg')`, 
               backgroundSize: 'cover', 
               backgroundPosition: 'right center',
-              maskImage: 'linear-gradient(to left, black 30%, transparent 70%)',
-              WebkitMaskImage: 'linear-gradient(to left, black 30%, transparent 70%)'
+              maskImage: 'linear-gradient(to left, black 45%, transparent 85%)',
+              WebkitMaskImage: 'linear-gradient(to left, black 45%, transparent 85%)'
             }}
           />
 
-          {/* Unifying Deep Blue Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-transparent to-slate-950/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-slate-950" />
         </div>
 
         {/* Content Layer */}
@@ -92,8 +96,8 @@ export default function Home() {
             className="text-[7vw] md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-200 to-slate-400 whitespace-nowrap"
           >
             {headline.split("").map((char, index) => (
-              <motion.span key={index} variants={letter}>
-                {char}
+              <motion.span key={index} variants={letter} className="inline-block">
+                {char === " " ? "\u00A0" : char}
               </motion.span>
             ))}
           </motion.h1>
@@ -101,7 +105,7 @@ export default function Home() {
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 1.5, duration: 1 }}
+            transition={{ delay: 2, duration: 1.5 }}
             className="text-xl md:text-2xl text-sky-50/80 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4"
           >
             I work at the intersection between <span className="text-white font-medium border-b border-sky-500/30">Westminster and business</span>. 
@@ -143,7 +147,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Speeches & Writing Sections */}
+      {/* Speeches & Writing */}
       <div className="max-w-5xl mx-auto px-6 space-y-48 pb-48 relative z-10">
         <motion.section {...slideUp} className="space-y-16">
           <div className="text-center">
