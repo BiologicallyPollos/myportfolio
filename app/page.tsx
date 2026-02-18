@@ -4,11 +4,19 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 export default function Home() {
-  const fadeInUp = {
-    initial: { opacity: 0, y: 20 },
-    whileInView: { opacity: 1, y: 0 },
-    viewport: { once: true },
-    transition: { duration: 0.8 }
+  // Animation profiles for the floating cards
+  const slideFromLeft = {
+    initial: { opacity: 0, x: -60 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.9 }
+  };
+
+  const slideFromRight = {
+    initial: { opacity: 0, x: 60 },
+    whileInView: { opacity: 1, x: 0 },
+    viewport: { once: true, margin: "-100px" },
+    transition: { duration: 0.9 }
   };
 
   const cardStyle = "bg-white rounded-[2rem] p-10 md:p-16 shadow-2xl shadow-emerald-900/10";
@@ -43,17 +51,13 @@ export default function Home() {
             You can see some of the stories below.
           </p>
         </motion.div>
-
-        <div className="absolute bottom-10 left-1/2 -translate-x-1/2 opacity-20">
-          <div className="w-px h-12 bg-white"></div>
-        </div>
       </section>
 
-      {/* Floating Content Cards */}
+      {/* Floating Content Cards with Slide Animations */}
       <div className="max-w-6xl mx-auto px-6 space-y-24 pb-40 relative z-10">
         
-        {/* 01. Visuals */}
-        <motion.section {...fadeInUp} className={cardStyle}>
+        {/* 01. Visuals - Slides in from Left */}
+        <motion.section {...slideFromLeft} className={cardStyle}>
           <div className="space-y-10">
             <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-600 uppercase">01. Visuals</h2>
             <div className="aspect-video w-full rounded-3xl overflow-hidden bg-gray-100 border border-gray-200">
@@ -64,8 +68,8 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 02. Speeches */}
-        <motion.section {...fadeInUp} className={cardStyle}>
+        {/* 02. Speeches - Slides in from Right */}
+        <motion.section {...slideFromRight} className={cardStyle}>
           <div className="space-y-10">
             <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-600 uppercase">02. Speeches</h2>
             <div className="grid md:grid-cols-2 gap-8">
@@ -83,8 +87,8 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* 03. Writing */}
-        <motion.section {...fadeInUp} className={cardStyle}>
+        {/* 03. Writing - Slides in from Left */}
+        <motion.section {...slideFromLeft} className={cardStyle}>
           <div className="space-y-10">
             <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-600 uppercase">03. Writing</h2>
             <div className="p-12 rounded-[3rem] bg-gradient-to-br from-gray-50 to-white border border-emerald-100">
@@ -96,8 +100,8 @@ export default function Home() {
           </div>
         </motion.section>
 
-        {/* Footer */}
-        <motion.footer {...fadeInUp} className={`${cardStyle} text-center`}>
+        {/* Footer - Slides in from Right */}
+        <motion.footer {...slideFromRight} className={`${cardStyle} text-center`}>
           <div className="flex flex-col items-center py-10">
             <a 
               href="https://linkedin.com/in/your-profile" 
