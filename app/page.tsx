@@ -11,6 +11,22 @@ export default function Home() {
     [Autoplay({ delay: 4000, stopOnInteraction: false })]
   );
 
+  const headline = "Hello, I'm Josh Funnell";
+  
+  // Typewriter Animation Logic
+  const sentence = {
+    hidden: { opacity: 1 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.05 },
+    },
+  };
+
+  const letter = {
+    hidden: { opacity: 0, y: 10 },
+    visible: { opacity: 1, y: 0 },
+  };
+
   const slideUp = {
     initial: { opacity: 0, y: 30 },
     whileInView: { opacity: 1, y: 0 },
@@ -27,70 +43,72 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-slate-950 text-white overflow-x-hidden selection:bg-sky-500/30 font-sans">
       
-      {/* Stylized Intersection Hero */}
+      {/* --- HERO SECTION WITH SEAMLESS BLEND --- */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         
-        {/* Background Visuals */}
+        {/* Background Visuals Layer */}
         <div className="absolute inset-0 z-0 flex pointer-events-none">
-          {/* Left: City of London (Business) */}
+          
+          {/* Left Side: City of London (Fading to center) */}
           <motion.div 
-            initial={{ x: '-10%', opacity: 0 }}
-            animate={{ x: 0, opacity: 0.15 }}
-            transition={{ duration: 2.5, ease: "easeOut" }}
-            className="relative w-1/2 h-full overflow-hidden"
-          >
-            <div 
-              className="absolute inset-0 scale-110 grayscale mix-blend-luminosity"
-              style={{ 
-                backgroundImage: `url('https://images.unsplash.com/photo-1533929736458-ca588d08c8be?auto=format&fit=crop&q=80&w=2070')`, 
-                backgroundSize: 'cover', backgroundPosition: 'center' 
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-slate-950 via-transparent to-slate-950" />
-          </motion.div>
-
-          {/* Right: Westminster (Politics) */}
-          <motion.div 
-            initial={{ x: '10%', opacity: 0 }}
-            animate={{ x: 0, opacity: 0.15 }}
-            transition={{ duration: 2.5, ease: "easeOut" }}
-            className="relative w-1/2 h-full overflow-hidden"
-          >
-            <div 
-              className="absolute inset-0 scale-110 grayscale mix-blend-luminosity"
-              style={{ 
-                backgroundImage: `url('https://images.unsplash.com/photo-1520986604055-aea6a3866991?auto=format&fit=crop&q=80&w=2070')`, 
-                backgroundSize: 'cover', backgroundPosition: 'center' 
-              }}
-            />
-            <div className="absolute inset-0 bg-gradient-to-l from-slate-950 via-transparent to-slate-950" />
-          </motion.div>
-
-          {/* Glowing Intersection Line */}
-          <motion.div 
-            initial={{ scaleY: 0, opacity: 0 }}
-            animate={{ scaleY: 1, opacity: 1 }}
-            transition={{ delay: 1, duration: 2 }}
-            className="absolute left-1/2 top-0 bottom-0 w-px bg-gradient-to-b from-transparent via-sky-400 to-transparent z-10 shadow-[0_0_30px_rgba(56,189,248,0.4)]"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.2 }}
+            transition={{ duration: 2 }}
+            className="absolute inset-0 w-full h-full"
+            style={{ 
+              backgroundImage: `url('/CoL Cover Photo.jpg')`, 
+              backgroundSize: 'cover', 
+              backgroundPosition: 'left center',
+              maskImage: 'linear-gradient(to right, black 30%, transparent 70%)',
+              WebkitMaskImage: 'linear-gradient(to right, black 30%, transparent 70%)'
+            }}
           />
+
+          {/* Right Side: Parliament (Fading to center) */}
+          <motion.div 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 0.2 }}
+            transition={{ duration: 2, delay: 0.5 }}
+            className="absolute inset-0 w-full h-full"
+            style={{ 
+              backgroundImage: `url('/Parliament Cover Photo.jpg')`, 
+              backgroundSize: 'cover', 
+              backgroundPosition: 'right center',
+              maskImage: 'linear-gradient(to left, black 30%, transparent 70%)',
+              WebkitMaskImage: 'linear-gradient(to left, black 30%, transparent 70%)'
+            }}
+          />
+
+          {/* Unifying Deep Blue Overlay */}
+          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/20 via-transparent to-slate-950/90" />
         </div>
 
-        {/* Hero Content */}
-        <motion.div 
-          initial={{ opacity: 0, scale: 0.98 }}
-          animate={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 1.2 }}
-          className="z-20 w-full max-w-7xl"
-        >
-          <h1 className="text-[7vw] md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-white to-sky-400 whitespace-nowrap">
-            Hello, I'm Josh Funnell
-          </h1>
-          <p className="text-xl md:text-2xl text-sky-50/80 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4">
+        {/* Content Layer */}
+        <div className="z-20 w-full max-w-7xl">
+          <motion.h1 
+            variants={sentence}
+            initial="hidden"
+            animate="visible"
+            className="text-[7vw] md:text-7xl lg:text-8xl font-bold tracking-tighter mb-8 bg-clip-text text-transparent bg-gradient-to-b from-white via-slate-200 to-slate-400 whitespace-nowrap"
+          >
+            {headline.split("").map((char, index) => (
+              <motion.span key={index} variants={letter}>
+                {char}
+              </motion.span>
+            ))}
+          </motion.h1>
+          
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 1.5, duration: 1 }}
+            className="text-xl md:text-2xl text-sky-50/80 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4"
+          >
             I work at the intersection between <span className="text-white font-medium border-b border-sky-500/30">Westminster and business</span>. 
             I take complex issues and communicate them as compelling stories. 
             You can see some of the stories below.
-          </p>
-        </motion.div>
+          </motion.p>
+        </div>
       </section>
 
       {/* Video Section */}
@@ -105,7 +123,7 @@ export default function Home() {
         </motion.div>
 
         {/* Carousel */}
-        <div className="relative group">
+        <div className="relative group px-4">
           <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-slate-950 to-transparent z-20 pointer-events-none" />
           <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-slate-950 to-transparent z-20 pointer-events-none" />
 
@@ -125,7 +143,7 @@ export default function Home() {
         </div>
       </div>
 
-      {/* Speeches & Writing */}
+      {/* Speeches & Writing Sections */}
       <div className="max-w-5xl mx-auto px-6 space-y-48 pb-48 relative z-10">
         <motion.section {...slideUp} className="space-y-16">
           <div className="text-center">
@@ -156,7 +174,7 @@ export default function Home() {
         </motion.section>
 
         {/* Footer */}
-        <footer className="pt-24 flex flex-col items-center border-t border-sky-500/10">
+        <footer className="pt-24 flex flex-col items-center border-t border-white/5">
           <a href="https://linkedin.com/in/your-profile" target="_blank" className="px-12 py-6 bg-white text-slate-950 rounded-full font-bold hover:scale-105 transition-all shadow-xl">
             Connect on LinkedIn
           </a>
