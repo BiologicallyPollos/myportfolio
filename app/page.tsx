@@ -13,7 +13,6 @@ export default function Home() {
 
   const headline = "Hello, I'm Josh Funnell";
   
-  // Smooth Typewriter Logic - "Ease" removed to fix the error
   const sentence = {
     hidden: { opacity: 1 },
     visible: {
@@ -28,7 +27,7 @@ export default function Home() {
       opacity: 1, 
       y: 0, 
       filter: "blur(0px)",
-      transition: { duration: 0.6 } // Removed 'ease' string to resolve the 1 problem
+      transition: { duration: 0.6 }
     },
   };
 
@@ -51,44 +50,47 @@ export default function Home() {
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         
-        {/* Background Visuals Layer */}
-        <div className="absolute inset-0 z-0 flex pointer-events-none">
+        {/* --- REFINED BACKGROUND VISUALS --- */}
+        <div className="absolute inset-0 z-0 flex pointer-events-none w-full h-full">
           
-          {/* Left Side: City of London (Sliding in) */}
+          {/* Left: City of London (Sharper on the left) */}
           <motion.div 
-            initial={{ x: -100, opacity: 0 }}
-            animate={{ x: 0, opacity: 0.35 }}
-            transition={{ duration: 1.8 }}
-            className="absolute inset-0 w-full h-full"
+            initial={{ x: -150, opacity: 0 }}
+            animate={{ x: 0, opacity: 0.45 }}
+            transition={{ duration: 1.8, ease: "easeOut" }}
+            className="absolute left-0 top-0 bottom-0 w-1/2 h-full"
             style={{ 
               backgroundImage: `url('/CoL Cover Photo.jpg')`, 
               backgroundSize: 'cover', 
               backgroundPosition: 'left center',
-              maskImage: 'linear-gradient(to right, black 45%, transparent 85%)',
-              WebkitMaskImage: 'linear-gradient(to right, black 45%, transparent 85%)'
+              // Solid for 80% of the half-width, then fades fast
+              maskImage: 'linear-gradient(to right, black 80%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to right, black 80%, transparent 100%)'
             }}
           />
 
-          {/* Right Side: Parliament (Sliding in) */}
+          {/* Right: Parliament (Sharper on the right) */}
           <motion.div 
-            initial={{ x: 100, opacity: 0 }}
-            animate={{ x: 0, opacity: 0.35 }}
-            transition={{ duration: 1.8, delay: 0.2 }}
-            className="absolute inset-0 w-full h-full"
+            initial={{ x: 150, opacity: 0 }}
+            animate={{ x: 0, opacity: 0.45 }}
+            transition={{ duration: 1.8, ease: "easeOut", delay: 0.2 }}
+            className="absolute right-0 top-0 bottom-0 w-1/2 h-full"
             style={{ 
               backgroundImage: `url('/Parliament Cover Photo.jpg')`, 
               backgroundSize: 'cover', 
               backgroundPosition: 'right center',
-              maskImage: 'linear-gradient(to left, black 45%, transparent 85%)',
-              WebkitMaskImage: 'linear-gradient(to left, black 45%, transparent 85%)'
+              // Solid for 80% of the half-width, then fades fast
+              maskImage: 'linear-gradient(to left, black 80%, transparent 100%)',
+              WebkitMaskImage: 'linear-gradient(to left, black 80%, transparent 100%)'
             }}
           />
 
+          {/* Deep center vignette to clean up the "join" */}
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/40 via-transparent to-slate-950" />
         </div>
 
-        {/* Content Layer */}
-        <div className="z-20 w-full max-w-7xl">
+        {/* --- CONTENT (Elevated z-index to ensure visibility) --- */}
+        <div className="relative z-50 w-full max-w-7xl">
           <motion.h1 
             variants={sentence}
             initial="hidden"
@@ -105,7 +107,7 @@ export default function Home() {
           <motion.p 
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
-            transition={{ delay: 2, duration: 1.5 }}
+            transition={{ delay: 2.2, duration: 1.5 }}
             className="text-xl md:text-2xl text-sky-50/80 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4"
           >
             I work at the intersection between <span className="text-white font-medium border-b border-sky-500/30">Westminster and business</span>. 
@@ -178,7 +180,7 @@ export default function Home() {
         </motion.section>
 
         {/* Footer */}
-        <footer className="pt-24 flex flex-col items-center border-t border-white/5">
+        <footer className="pt-24 flex flex-col items-center border-t border-sky-500/10">
           <a href="https://linkedin.com/in/your-profile" target="_blank" className="px-12 py-6 bg-white text-slate-950 rounded-full font-bold hover:scale-105 transition-all shadow-xl">
             Connect on LinkedIn
           </a>
