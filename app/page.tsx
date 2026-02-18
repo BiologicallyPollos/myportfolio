@@ -6,26 +6,20 @@ import useEmblaCarousel from 'embla-carousel-react';
 import Autoplay from 'embla-carousel-autoplay';
 
 export default function Home() {
-  // Carousel Setup
-  const [emblaRef] = useEmblaCarousel({ loop: true }, [Autoplay({ delay: 4000 })]);
+  // Carousel Setup for Center Alignment
+  const [emblaRef] = useEmblaCarousel(
+    { loop: true, align: 'center', containScroll: false }, 
+    [Autoplay({ delay: 4000, stopOnInteraction: false })]
+  );
 
-  const slideFromLeft = {
-    initial: { opacity: 0, x: -60 },
-    whileInView: { opacity: 1, x: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 0.9 }
+  const slideUp = {
+    initial: { opacity: 0, y: 30 },
+    whileInView: { opacity: 1, y: 0 },
+    viewport: { once: true },
+    transition: { duration: 0.8 }
   };
 
-  const slideFromRight = {
-    initial: { opacity: 0, x: 60 },
-    whileInView: { opacity: 1, x: 0 },
-    viewport: { once: true, margin: "-100px" },
-    transition: { duration: 0.9 }
-  };
-
-  const cardStyle = "bg-white rounded-[2rem] p-10 md:p-16 shadow-2xl shadow-emerald-900/10";
-
-  // Video data - swap these URLs for your actual content
+  // Video data
   const videos = [
     "https://assets.mixkit.co/videos/preview/mixkit-panning-over-a-british-flag-on-top-of-a-building-34244-large.mp4",
     "https://assets.mixkit.co/videos/preview/mixkit-curvy-road-along-the-coastline-43224-large.mp4",
@@ -52,78 +46,79 @@ export default function Home() {
         </motion.div>
       </section>
 
-      {/* Floating Content Cards */}
-      <div className="max-w-6xl mx-auto px-6 space-y-24 pb-40 relative z-10">
-        
-        {/* 01. Visuals - VIDEO CAROUSEL */}
-        <motion.section {...slideFromLeft} className={cardStyle}>
-          <div className="space-y-10">
-            <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-600 uppercase">01. Visuals</h2>
-            
-            {/* Carousel Container */}
-            <div className="overflow-hidden rounded-3xl cursor-grab active:cursor-grabbing" ref={emblaRef}>
-              <div className="flex">
-                {videos.map((src, index) => (
-                  <div key={index} className="flex-[0_0_100%] min-w-0 relative aspect-video px-2">
+      {/* Cinematic Video Carousel Section */}
+      <div className="py-24 relative z-10">
+        <motion.div {...slideUp} className="max-w-7xl mx-auto px-6 mb-12">
+          <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-500 uppercase">01. Visuals</h2>
+        </motion.div>
+
+        {/* Carousel with Edge Fading Mask */}
+        <div className="relative group">
+          {/* Fading Mask Overlays */}
+          <div className="absolute inset-y-0 left-0 w-1/4 bg-gradient-to-r from-[#021509] to-transparent z-20 pointer-events-none" />
+          <div className="absolute inset-y-0 right-0 w-1/4 bg-gradient-to-l from-[#021509] to-transparent z-20 pointer-events-none" />
+
+          <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
+            <div className="flex -ml-4">
+              {videos.map((src, index) => (
+                <div key={index} className="flex-[0_0_80%] md:flex-[0_0_60%] min-w-0 pl-4 relative">
+                  <div className="aspect-video rounded-[2rem] overflow-hidden border border-white/5 shadow-2xl transition-transform duration-700 group-hover:scale-[1.02]">
                     <video 
                       autoPlay 
                       muted 
                       loop 
                       playsInline 
-                      className="w-full h-full object-cover rounded-2xl shadow-lg grayscale brightness-75 hover:grayscale-0 transition-all duration-700"
+                      className="w-full h-full object-cover grayscale brightness-75 hover:grayscale-0 transition-all duration-1000"
                     >
                       <source src={src} type="video/mp4" />
                     </video>
                   </div>
-                ))}
-              </div>
+                </div>
+              ))}
             </div>
-            <p className="text-center text-gray-400 text-sm font-mono tracking-widest uppercase">Swipe to explore</p>
           </div>
-        </motion.section>
+        </div>
+        <p className="text-center text-white/20 text-sm font-mono tracking-widest uppercase mt-12">Swipe to Explore</p>
+      </div>
 
+      {/* Remaining Content (Floating Cards removed for clean look) */}
+      <div className="max-w-5xl mx-auto px-6 space-y-40 pb-40 relative z-10">
+        
         {/* 02. Speeches */}
-        <motion.section {...slideFromRight} className={cardStyle}>
-          <div className="space-y-10">
-            <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-600 uppercase">02. Speeches</h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div className="p-8 rounded-3xl bg-gray-50 border border-gray-200">
-                <span className="text-emerald-600 font-mono text-xs mb-4 block uppercase tracking-widest">Feb 2026</span>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Strategic Efficiency</h3>
-                <p className="text-gray-600 leading-relaxed">Keynote on legislative frameworks and project delivery.</p>
+        <motion.section {...slideUp} className="space-y-10">
+          <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-500 uppercase">02. Speeches</h2>
+          <div className="grid md:grid-cols-2 gap-8 text-left">
+            {[
+              { date: "Feb 2026", title: "Strategic Efficiency", desc: "Keynote on legislative frameworks." },
+              { date: "Jan 2026", title: "Digital Westminster", desc: "A roadmap for technological integration." }
+            ].map((s, i) => (
+              <div key={i} className="p-10 rounded-3xl bg-white/[0.03] border border-white/5 hover:bg-white/[0.05] transition-all">
+                <span className="text-emerald-500 font-mono text-xs mb-4 block uppercase tracking-widest">{s.date}</span>
+                <h3 className="text-2xl font-bold mb-3">{s.title}</h3>
+                <p className="text-white/40 leading-relaxed">{s.desc}</p>
               </div>
-              <div className="p-8 rounded-3xl bg-gray-50 border border-gray-200">
-                <span className="text-emerald-600 font-mono text-xs mb-4 block uppercase tracking-widest">Jan 2026</span>
-                <h3 className="text-2xl font-bold mb-3 text-gray-900">Digital Westminster</h3>
-                <p className="text-gray-600 leading-relaxed">A roadmap for technological integration in public sectors.</p>
-              </div>
-            </div>
+            ))}
           </div>
         </motion.section>
 
         {/* 03. Writing */}
-        <motion.section {...slideFromLeft} className={cardStyle}>
-          <div className="space-y-10">
-            <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-600 uppercase">03. Writing</h2>
-            <div className="p-12 rounded-[3rem] bg-gradient-to-br from-gray-50 to-white border border-emerald-100">
-              <h3 className="text-3xl md:text-4xl font-bold mb-6 italic tracking-tight text-gray-900 leading-tight">
-                "The verifiable truth about digital infrastructure."
-              </h3>
-              <p className="text-emerald-600 uppercase tracking-[0.3em] text-[10px] font-bold">The Spectator • 2026</p>
-            </div>
+        <motion.section {...slideUp} className="space-y-10 text-center">
+          <h2 className="text-xs font-bold tracking-[0.4em] text-emerald-500 uppercase">03. Writing</h2>
+          <div className="py-20 border-y border-white/5">
+            <h3 className="text-4xl md:text-5xl font-bold mb-8 italic tracking-tight text-emerald-50/90 leading-tight">
+              "The verifiable truth about digital infrastructure."
+            </h3>
+            <p className="text-emerald-500 uppercase tracking-[0.3em] text-sm font-bold">The Spectator • 2026</p>
           </div>
         </motion.section>
 
         {/* Footer */}
-        <motion.footer {...slideFromRight} className={`${cardStyle} text-center`}>
-          <div className="flex flex-col items-center py-10">
-            <a href="https://linkedin.com/in/your-profile" target="_blank" className="px-12 py-6 bg-[#021509] text-white rounded-full font-bold hover:bg-emerald-800 transition-all shadow-lg">
-              Connect on LinkedIn
-            </a>
-            <p className="mt-12 text-gray-400 font-mono text-[10px] tracking-[0.5em] uppercase">© 2026 Josh Funnell</p>
-          </div>
-        </motion.footer>
-
+        <footer className="pt-20 flex flex-col items-center">
+          <a href="https://linkedin.com/in/your-profile" target="_blank" className="px-12 py-6 bg-white text-[#021509] rounded-full font-bold hover:scale-105 transition-all">
+            Connect on LinkedIn
+          </a>
+          <p className="mt-12 text-white/10 font-mono text-[10px] tracking-[0.5em] uppercase">© 2026 Josh Funnell</p>
+        </footer>
       </div>
     </main>
   );
