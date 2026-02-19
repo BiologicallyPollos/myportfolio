@@ -48,11 +48,219 @@ export default function Home() {
     {
       id: "speech-1",
       date: "FEB 2026",
-      title: "Risks and Priorities in Public Affairs",
-      desc: "A report on legislative priorities and pressing external challenges.",
-      takeaways: ["Legislative Agility", "Infrastructure Reform", "Global Competition"],
-      content: "PASTE FULL TEXT OF FILE 1 HERE...",
-      sources: [{ label: "ONS Economic Data", url: "#" }]
+      title: "Business Builds Britain",
+      desc: "A keynote address on the role of private enterprise as the driver of national growth.",
+      takeaways: ["Wealth Creation", "Tax Reform", "Entrepreneurship"],
+      content: `Conference, business builds Britain.
+
+It is business that takes ideas and turns them into reality.
+
+Takes jobs and turns them into livelihoods.
+
+And it is business that pays the nation’s bills.
+
+With strong business, everything is possible.
+
+I spent 25 years in business where I saw optimism at work every day.
+
+That is why I am optimistic.
+
+I know Britain can return to being a world-leading economy.
+
+Our country has huge strengths which even years more of this government will not diminish.
+
+The English language, respect for property, our deep, sophisticated financial markets, and a mix of the businesses that thrive globally.
+
+Around the world, people want what we produce.
+
+And they want our skills, our capital and our ideas.
+
+Thanks to the last Conservative government, we have an independent trade policy which allows us to sell not just to Europe but to our long-standing allies and most of the fastest growing economies on the planet.
+
+Compare that distinguished record on trade to the press release politics we’ve seen over the last year.
+
+The Prime Minister told us in May his US deal was signed, sealed and delivered.
+
+Yet tariffs remain.
+
+He told us he had a deal for pharmaceuticals.
+
+But it never materialised, and our drug companies are leaving.
+
+He told us he finally understood Brexit.
+
+And he then went running back to Brussels to let them dictate our rules, killing our flexibility for future deals.
+
+It’s clear that Labour and the other parties simply don’t understand business.
+
+How could they? 
+
+Unlike our Party, their ranks are full of professional politicians, trade unionists and the public sector.
+
+No government that understood business would ever have imposed a jobs tax and changes to national insurance thresholds which hurt those employing the most the hardest.
+
+Or the family business tax – a death tax.
+
+Or doubled rates on the very businesses which keep our high streets alive.
+
+And conference, no government that cared about British firms and British workers would ignore energy costs that are four times higher than our competitors.
+
+Instead of creating wealth, they attack it, driving away entrepreneurs, investors, and top talent.
+
+Too many of our best and brightest are exchanging Docklands for Dubai or Manchester for Milan.
+
+And what Labour do nationally, the Greens, Lib Dems and the nationalists do locally.
+
+Hostile planning policies frustrating businesses trying to expand.
+
+Blocking new infrastructure.
+
+And suffocating firms with traffic congestion, parking restrictions and red tape.
+
+The next government will fix this and more just as after the failed consensus of the seventies, Britain picked itself up, restoring our pride and our growth.
+
+But the process of change requires being honest about where we start.
+
+We are no longer the rich country many think we are.
+
+For too long we’ve been slipping down the international rankings in GDP per capita, competitiveness, and inward investment.
+
+Under Labour, Britain is competing in the veterans’ race - comparing ourselves to the G7 - when the real competition are those younger, fitter economies who are overtaking us.
+
+We Conservatives know that it is only private enterprise that creates growth, not government.
+
+There were moments in office where we strayed from that truth.
+
+More regulations, raising taxes, the state as nanny.
+
+Indulging the idea that government is the solution, when we know very often it is the problem.
+
+But the Conservative Party is under new management.
+
+And at the heart of our strategy is an approach that’s proud to champion wealth creators and risk takers.
+
+Creating a new generation of entrepreneurs and backing our businesses.
+
+I am announcing clear policies today which start that work.
+
+In our very first budget, we will repeal the family business tax which punishes success and dis-incentivises growth.
+
+We will build a tax system which values those who take a risk and helps the smallest businesses.
+
+And the next Conservative government will actively reverse the job destroying measures in Labour’s Unemployment Rights Bill.
+
+A Bill which allows strikes to be called even if just a tiny fraction of the workforce vote.
+
+A Bill which will destroy job opportunities for young people whilst topping up Labour’s political fund without workers being given the choice.
+
+And the opposition to this terrible Bill in Parliament has been led by your Conservative shadow business team.
+
+David Hunt and Andrew Sharpe in the House of Lords.
+
+My shadow Ministers Harriet Baldwin, Gareth Davies and my PPS, Ali Griffiths in the Commons.
+
+Not by any other party. By the Conservative Party.
+
+And there is more.
+
+I understand there are far too many hurdles for small businesses to jump.
+
+Red tape that steals away the precious time of those who run them.
+
+Take HMRC, an organisation which literally tried to turn its helplines off for six months of the year.
+
+We say ‘enough’. That is unacceptable.
+
+So, within weeks of entering government, we will that ensure every time a small business contacts HMRC, they are given the opportunity to rate their experience in the same way as companies seek customer feedback.
+
+No more hanging on the phone for an hour with no one held accountable.
+
+No one loves paying their taxes. 
+
+But the taxman needs to respect those whose hard work and enterprise pays their salaries.
+
+Nowhere is that more important than the self-employed.
+
+They’re risk-takers, striking out on their own, often with nothing more than a laptop and a belief they can make it work.
+
+That’s why we commit today to doing better for the self-employed. 
+
+And that includes looking again at reforming IR35.
+
+Because if Britain is to have ladders of opportunity, then the self-employed need to be able to climb them.
+
+Similarly, opening a bank account today is so hard it is a miracle anyone starts a business at all.
+
+It can take weeks or even months to do what other countries do in minutes.
+
+It shows just how far our regulators have lost the plot and it’s a brake on growth we cannot afford.
+
+So, we will transform a process which makes banks treat you as guilty until proven innocent.
+
+From the tone at the top of the regulators to repealing EU era rules, we have a clear plan, and we will fix this.
+
+So: scrapping the family business tax, reversing the Unemployment Bill, easier bank accounts and a better service from HMRC.
+
+Real policies that will make a real difference.
+
+And, where we can, we need a tax framework which shows our support with actions not words.
+
+No sector has been hurt harder by Labour’s onslaught against enterprise than hospitality, retail, and leisure.
+
+89,000 jobs lost in the hospitality sector alone since Rachel Reeves’ Autumn Budget.
+
+One of her first actions in office was to more than double business rates for many of our high street businesses by cutting the relief that previous Conservative governments introduced.
+
+Because of the choices she’s made, the life in our high streets is ebbing away.
+
+And we know the heart of our communities are suffering.
+
+So, we want to give them hope.
+
+Today, we are announcing that when we return to government, we will introduce a permanent, one hundred per cent rate relief in business rates for retail, hospitality, and leisure.
+
+250,000 businesses will benefit from that change.
+
+Pubs, shops, restaurants struggling across the country will be saved.
+
+And our high streets will get an enormous boost.
+
+But conference there’s one more thing.
+
+We want to reignite a culture of entrepreneurship in Britain.
+
+To support and celebrate those who take a risk.
+
+A mission the like of which we’ve not seen since my friend and mentor, Lord David Young was Mrs Thatcher’s Secretary for Trade and Enterprise.
+
+To create a new generation of entrepreneurs.
+
+As Business Secretary, I want to see young entrepreneur schemes flourish in every school and college in the country.
+
+Building on existing schemes, delivered by people who’ve been there and done it and who want the next generation to succeed.
+
+We will provide the support to make this happen because this is what we believe a stronger economy requires.
+
+So, Conference, let me be clear.
+
+The Conservative Party as the party of enterprise, the party of the entrepreneur, the party of business.
+
+On the side of the pub landlord, the restaurateur, the small business owner, the self-employed, and the family business.
+
+Those who work for themselves and give work to others.
+
+The builders, not the blockers.
+
+Those that make, not those that take.
+
+That’s who we support, that’s who we believe in, that’s who our government will serve.
+
+Nations that seize opportunity, rise.
+
+We will seize that opportunity, and together we will make Britain’s economy strong again.
+
+Thank you.`,
+      sources: [{ label: "Download Original Transcript", url: "#" }]
     },
     {
       id: "speech-2",
