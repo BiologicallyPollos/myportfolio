@@ -783,7 +783,7 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
           </motion.p>
         </div>
 
-        {/* --- NEW: ANIMATED SCROLL INDICATOR --- */}
+        {/* --- ANIMATED SCROLL INDICATOR (Updated styling) --- */}
         <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
@@ -791,13 +791,13 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
           className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer z-[100] group"
           onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
         >
-          <span className="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase mb-3 group-hover:text-slate-300 transition-colors duration-300">Scroll</span>
+          <span className="text-xs font-bold tracking-[0.2em] text-slate-400 uppercase mb-4 group-hover:text-white transition-colors duration-300 drop-shadow-md">Scroll</span>
           <motion.div
-            animate={{ y: [0, 8, 0] }}
+            animate={{ y: [0, 10, 0] }}
             transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
           >
-            <svg className="w-6 h-6 text-slate-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+            <svg className="w-10 h-10 text-slate-400 group-hover:text-white transition-colors duration-300 drop-shadow-lg" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
             </svg>
           </motion.div>
         </motion.div>
@@ -807,10 +807,12 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
       <div className="py-32 relative z-10">
         <motion.div {...slideUp} className="max-w-4xl mx-auto px-6 mb-16 text-center">
           <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-8">Video</h2>
+          {/* --- UPDATED VIDEO SUBHEADING --- */}
           <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
             These days, there's so much information. It's difficult to know where to start. 
-            But <span className="text-white font-normal">cutting through to what's important</span> is crucial for businesses and politicians alike. 
-            Video bridges that gap — transforming abstract policy and complex corporate strategy into human stories. Content I've produced has generated over 35 million impressions on social media - here's some below.
+            But <span className="text-white font-medium border-b border-slate-600">cutting through to what's important</span> is crucial for businesses and politicians alike. 
+            Video bridges that gap — transforming abstract policy and complex corporate strategy into human stories. 
+            Content I've produced has generated over 35 million impressions on social media. Here's some below.
           </p>
         </motion.div>
         
