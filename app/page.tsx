@@ -32,10 +32,12 @@ export default function Home() {
     transition: { duration: 0.8 }
   };
 
+  // UPDATED: Now pointing to your local, compressed .mp4 files
   const videos = [
-    "https://assets.mixkit.co/videos/preview/mixkit-panning-over-a-british-flag-on-top-of-a-building-34244-large.mp4",
-    "https://assets.mixkit.co/videos/preview/mixkit-curvy-road-along-the-coastline-43224-large.mp4",
-    "https://assets.mixkit.co/videos/preview/mixkit-forest-stream-in-the-sunlight-529-large.mp4"
+    "/Video-1.mp4",
+    "/Video-2.mp4",
+    "/Video-3.mp4",
+    "/Video-4.mp4"
   ];
 
   const speeches = [
@@ -72,7 +74,6 @@ export default function Home() {
         </div>
         
         <div className="relative z-[100] w-full max-w-7xl">
-          {/* Changed: Crisp, bold sans-serif headline */}
           <motion.h1 variants={sentence} initial="hidden" animate="visible" className="text-[7vw] md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 whitespace-nowrap">
             {headline.split("").map((char, index) => (<motion.span key={index} variants={letter} className="inline-block">{char === " " ? "\u00A0" : char}</motion.span>))}
           </motion.h1>
@@ -85,7 +86,6 @@ export default function Home() {
       {/* Video Section */}
       <div className="py-32 relative z-10">
         <motion.div {...slideUp} className="max-w-4xl mx-auto px-6 mb-16 text-center">
-          {/* Changed: Strong corporate blue for section labels */}
           <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-8">Video</h2>
           <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
             These days, there's so much information. It's difficult to know where to start. 
@@ -117,7 +117,6 @@ export default function Home() {
       <div className="max-w-5xl mx-auto px-6 space-y-48 pb-48 relative z-10">
         <motion.section {...slideUp} className="space-y-16">
           <div className="text-center">
-            {/* Changed: Strong corporate blue for section labels */}
             <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Speeches & Transcripts</h2>
           </div>
           <div className="grid md:grid-cols-2 gap-8 text-left">
@@ -125,11 +124,9 @@ export default function Home() {
               <div key={i} className="group relative flex flex-col justify-between h-full bg-[#0f172a] border border-slate-800 p-8 rounded-sm hover:border-slate-600 transition-colors duration-300">
                 <div className="absolute top-0 left-0 w-full h-1 bg-slate-800 group-hover:bg-blue-500 transition-colors duration-300 rounded-t-sm" />
                 <div>
-                  {/* Title & Description styled to match the screenshot exactly */}
                   <h3 className="text-xl md:text-2xl font-bold mb-4 text-slate-50 group-hover:text-white transition-colors leading-tight">{s.title}</h3>
                   <p className="text-slate-400 text-sm leading-relaxed mb-8">{s.desc}</p>
                 </div>
-                {/* Changed: Bold blue action links just like the screenshot */}
                 <button 
                   onClick={() => setSelectedSpeech(s)}
                   className="inline-flex items-center text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors gap-2 group-hover:translate-x-1 duration-300"
@@ -145,7 +142,6 @@ export default function Home() {
         <motion.section {...slideUp} className="space-y-16 text-center">
           <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase">Writing</h2>
           <div className="py-24 border-y border-slate-800">
-            {/* Changed: Back to bold sans-serif, no serif */}
             <h3 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight text-slate-100 leading-tight">
               "The verifiable truth about digital infrastructure."
             </h3>
@@ -171,7 +167,6 @@ export default function Home() {
               </div>
               <div className="mb-12 border-b border-slate-800 pb-8">
                 <span className="text-blue-400 text-xs font-bold tracking-widest uppercase mb-4 block">{selectedSpeech.date}</span>
-                {/* Changed: Bold sans-serif modal header */}
                 <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">{selectedSpeech.title}</h2>
               </div>
               <div className="prose prose-invert prose-lg max-w-none flex-grow">
