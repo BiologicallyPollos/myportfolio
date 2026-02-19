@@ -1,7 +1,6 @@
 "use client";
 
 import React, { useState } from 'react';
-// 1. Added useTransform to our imports for the parallax effect
 import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 
@@ -20,8 +19,6 @@ export default function Home() {
     restDelta: 0.001
   });
 
-  // 2. NEW: Parallax logic for the hero background
-  // This tells the background to move downwards by 40% as the user scrolls to the bottom of the page
   const heroBgY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
 
   const headline = "Hello, I'm Josh Funnell";
@@ -746,7 +743,6 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
         
-        {/* 3. NEW: The Parallax and Breathing Container */}
         <motion.div style={{ y: heroBgY }} className="absolute inset-0 z-0 flex pointer-events-none w-full h-[130%] -top-[15%]">
           
           <motion.div 
@@ -786,6 +782,25 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
             I'm experienced at <span className="text-white font-medium border-b border-slate-600">joining up the dots between Westminster and business</span>. I take complex issues and communicate them as compelling stories. You can see some of those stories below.
           </motion.p>
         </div>
+
+        {/* --- NEW: ANIMATED SCROLL INDICATOR --- */}
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 4, duration: 1.5 }}
+          className="absolute bottom-12 left-1/2 transform -translate-x-1/2 flex flex-col items-center cursor-pointer z-[100] group"
+          onClick={() => window.scrollTo({ top: window.innerHeight, behavior: 'smooth' })}
+        >
+          <span className="text-[10px] font-bold tracking-[0.2em] text-slate-500 uppercase mb-3 group-hover:text-slate-300 transition-colors duration-300">Scroll</span>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" }}
+          >
+            <svg className="w-6 h-6 text-slate-500 group-hover:text-white transition-colors duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+            </svg>
+          </motion.div>
+        </motion.div>
       </section>
 
       {/* Video Carousel Section */}
@@ -795,7 +810,7 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
           <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
             These days, there's so much information. It's difficult to know where to start. 
             But <span className="text-white font-normal">cutting through to what's important</span> is crucial for businesses and politicians alike. 
-            Video bridges that gap — transforming abstract policy and complex corporate strategy into human stories.
+            Video bridges that gap — transforming abstract policy and complex corporate strategy into human stories. Content I've produced has generated over 35 million impressions on social media - here's some below.
           </p>
         </motion.div>
         
