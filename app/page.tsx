@@ -9,7 +9,6 @@ export default function Home() {
 
   const [selectedSpeech, setSelectedSpeech] = useState<null | any>(null);
   const [selectedVideo, setSelectedVideo] = useState<null | string>(null); 
-  // NEW: State to handle the Op-Ed reader modal
   const [selectedArticle, setSelectedArticle] = useState<null | any>(null);
 
   const { scrollYProgress } = useScroll();
@@ -544,7 +543,6 @@ I commend this motion to the House.`,
     }
   ];
 
-  // NEW: The Articles Data Array
   const articles = [
     {
       id: "article-1",
@@ -721,7 +719,7 @@ Relative to other economies, the UK over-taxes both property and employment, hit
 
 The better news is that we Conservatives can fix this. We know how to, and in Kemi Badenoch we have a leader with business experience who completely understands the need. My own mentor and the inspiration for me to go into politics after a decades-long career in business, Lord Young, understood this and is most famous for his time as secretary of state for enterprise.
 
-At recent elections we have struggled to attract the support of younger voters but with their side-hustles and gig-economy entrepreneurialism, they are natural Conservatives if we can convince them we are on their side. Margaret Thatcher’s majorities were built with the support of an army of small business owners and the self-employed, hungry for a government that rewarded aspiration.
+At recent elections we’ve struggled to attract the support of younger voters but with their side-hustles and gig-economy entrepreneurialism, they are natural Conservatives if we can convince them we are on their side. Margaret Thatcher’s majorities were built with the support of an army of small business owners and the self-employed, hungry for a government that rewarded aspiration.
 
 We will develop the detail over the coming months but this is an area where principles translate straightforwardly into policy. Lower taxes, a smaller state which does fewer things better and a government willing to stand up and defend wealth-creating risk-takers. The difference is that this time our plans must be credible, fully prepared in advance and ready to implement on day one of our next term in office.
 
@@ -793,7 +791,7 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
       </div>
 
       {/* Speeches Grid */}
-      <div className="max-w-5xl mx-auto px-6 space-y-48 pb-48 relative z-10">
+      <div className="max-w-5xl mx-auto px-6 space-y-48 pb-32 relative z-10">
         <motion.section {...slideUp} className="space-y-16">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-8">Speeches</h2>
@@ -821,9 +819,9 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
         {/* OP-EDS & COMMENTARY GRID */}
         <motion.section {...slideUp} className="space-y-16">
           <div className="text-center max-w-4xl mx-auto">
-            <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-8">Op-Eds & Commentary</h2>
+            <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-8">My OpEds</h2>
             <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
-              Placing thought leadership in national titles requires cutting through the noise. Here are three pieces of commentary designed to drive the political agenda and shape the business narrative.
+              I've ghost written and placed OpEds regularly across the national press. They are brilliant way to communicate a message in writing, and to use a spring board to develop your story once they're published. Here are three examples of some of my work.
             </p>
           </div>
           
@@ -847,11 +845,36 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
           </div>
         </motion.section>
 
-        <footer className="pt-24 flex flex-col items-center border-t border-slate-800 pb-12">
-          <a href="https://linkedin.com/in/your-profile" target="_blank" className="px-12 py-4 bg-white text-slate-950 rounded-sm font-bold hover:bg-slate-200 transition-colors shadow-lg">
-            Connect on LinkedIn
-          </a>
-          <p className="mt-12 text-slate-500 font-sans text-xs tracking-widest uppercase">© 2026 Josh Funnell</p>
+        {/* --- FOOTER & CONTACT BUTTONS --- */}
+        <footer className="pt-32 flex flex-col items-center border-t border-slate-800 pb-12">
+          
+          <div className="flex flex-col sm:flex-row gap-6 mb-12">
+            {/* LinkedIn Button */}
+            <a 
+              href="https://www.linkedin.com/in/joshfunnell/" 
+              target="_blank" 
+              rel="noopener noreferrer" 
+              className="group flex items-center justify-center gap-3 px-8 py-4 bg-blue-600 text-white rounded-full font-bold hover:bg-blue-500 transition-all duration-300 shadow-[0_0_20px_rgba(37,99,235,0.3)] hover:shadow-[0_0_30px_rgba(37,99,235,0.5)] hover:-translate-y-1"
+            >
+              <svg className="w-5 h-5 fill-current" viewBox="0 0 24 24">
+                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+              </svg>
+              Connect on LinkedIn
+            </a>
+
+            {/* Email Button */}
+            <a 
+              href="mailto:josh.funnell1@hotmail.com" 
+              className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white hover:text-slate-950 transition-all duration-300 shadow-lg hover:-translate-y-1"
+            >
+              <svg className="w-5 h-5 transition-colors" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              Email Me
+            </a>
+          </div>
+
+          <p className="text-slate-500 font-sans text-xs tracking-widest uppercase">© 2026 Josh Funnell</p>
         </footer>
       </div>
 
