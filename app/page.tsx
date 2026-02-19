@@ -13,7 +13,6 @@ export default function Home() {
 
   const headline = "Hello, I'm Josh Funnell";
   
-  // High-visibility typewriter logic
   const sentence = {
     hidden: { opacity: 1 },
     visible: {
@@ -53,7 +52,7 @@ export default function Home() {
         {/* Background Visuals Layer */}
         <div className="absolute inset-0 z-0 flex pointer-events-none w-full h-full">
           
-          {/* Left: City of London (Sharper, more visible) */}
+          {/* Left: City of London (Sharper, sliding in) */}
           <motion.div 
             initial={{ x: -150, opacity: 0 }}
             animate={{ x: 0, opacity: 0.4 }}
@@ -68,7 +67,7 @@ export default function Home() {
             }}
           />
 
-          {/* Right: Parliament (Sharper, more visible) */}
+          {/* Right: Parliament (Sharper, sliding in) */}
           <motion.div 
             initial={{ x: 150, opacity: 0 }}
             animate={{ x: 0, opacity: 0.4 }}
@@ -86,7 +85,7 @@ export default function Home() {
           <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950 z-10" />
         </div>
 
-        {/* Content Layer - FORCED TO TOP */}
+        {/* Content Layer */}
         <div className="relative z-[100] w-full max-w-7xl">
           <motion.h1 
             variants={sentence}
