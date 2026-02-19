@@ -5,11 +5,9 @@ import { motion, AnimatePresence } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 
 export default function Home() {
-  // Removed the Autoplay plugin to give the user complete control
   const [emblaRef] = useEmblaCarousel({ loop: true, align: 'center', containScroll: false });
 
   const [selectedSpeech, setSelectedSpeech] = useState<null | any>(null);
-  // New state to control the cinematic video modal
   const [selectedVideo, setSelectedVideo] = useState<null | string>(null); 
 
   const headline = "Hello, I'm Josh Funnell";
@@ -98,23 +96,16 @@ export default function Home() {
           <div className="overflow-hidden cursor-grab active:cursor-grabbing" ref={emblaRef}>
             <div className="flex -ml-4">
               {videos.map((src, index) => (
-                // Added a cursor pointer and an onClick trigger to open the video modal
                 <div key={index} className="flex-[0_0_85%] md:flex-[0_0_65%] min-w-0 pl-4 relative group/video cursor-pointer" onClick={() => setSelectedVideo(src)}>
                   <div className="aspect-video rounded-sm overflow-hidden border border-slate-800 shadow-2xl transition-transform duration-500 group-hover/video:scale-[1.02] relative">
-                    
-                    {/* Removed the grayscale classes entirely. Just a clean, full-color looping preview. */}
                     <video autoPlay muted loop playsInline className="w-full h-full object-cover transition-all duration-700">
                       <source src={src} type="video/mp4" />
                     </video>
-
-                    {/* New: Play Button Overlay to indicate interactivity */}
                     <div className="absolute inset-0 flex items-center justify-center bg-slate-950/20 opacity-0 group-hover/video:opacity-100 transition-opacity duration-300">
                       <div className="w-16 h-16 flex items-center justify-center rounded-full bg-slate-900/90 backdrop-blur-sm border border-slate-700 text-white shadow-xl group-hover/video:bg-blue-500 group-hover/video:border-blue-400 transition-all duration-300">
-                        {/* SVG Play Icon */}
                         <svg className="w-6 h-6 ml-1" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
                       </div>
                     </div>
-
                   </div>
                 </div>
               ))}
@@ -167,19 +158,25 @@ export default function Home() {
         </footer>
       </div>
 
-      {/* --- NEW: CINEMATIC VIDEO MODAL --- */}
+      {/* --- CINEMATIC VIDEO MODAL WITH ANIMATED CLOSE BUTTON --- */}
       <AnimatePresence>
         {selectedVideo && (
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[300] flex items-center justify-center bg-slate-950/95 backdrop-blur-md p-4 md:p-12">
             
             <div className="absolute top-6 right-6 z-10">
-              <button onClick={() => setSelectedVideo(null)} className="text-slate-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest bg-slate-900/50 px-4 py-2 rounded-sm border border-slate-700">
+              {/* Changed to motion.button for spring physics animation */}
+              <motion.button 
+                onClick={() => setSelectedVideo(null)} 
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                transition={{ type: "spring", stiffness: 400, damping: 17 }}
+                className="text-slate-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest bg-slate-900/50 px-4 py-2 rounded-sm border border-slate-700 hover:border-slate-500 hover:bg-slate-900/80"
+              >
                 Close [X]
-              </button>
+              </motion.button>
             </div>
 
             <motion.div initial={{ scale: 0.95, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} exit={{ scale: 0.95, opacity: 0 }} transition={{ type: "spring", damping: 30, stiffness: 300 }} className="w-full max-w-6xl aspect-video bg-black rounded-sm overflow-hidden shadow-2xl border border-slate-800 relative">
-              {/* Native video player with controls enabled, ensuring audio works seamlessly */}
               <video controls autoPlay className="w-full h-full object-contain">
                 <source src={selectedVideo} type="video/mp4" />
                 Your browser does not support the video tag.
@@ -198,6 +195,7 @@ export default function Home() {
               <div className="sticky top-0 right-0 flex justify-end pb-8 z-10 bg-[#0f172a]/95 -mx-8 px-8 -mt-8 pt-8">
                 <button onClick={() => setSelectedSpeech(null)} className="text-slate-400 hover:text-white transition-colors text-sm font-bold uppercase tracking-widest">Close [X]</button>
               </div>
+              {/* ... rest of speech modal ... */}
               <div className="mb-12 border-b border-slate-800 pb-8">
                 <span className="text-blue-400 text-xs font-bold tracking-widest uppercase mb-4 block">{selectedSpeech.date}</span>
                 <h2 className="text-3xl md:text-4xl font-bold text-white tracking-tight leading-tight">{selectedSpeech.title}</h2>
