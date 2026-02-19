@@ -9,8 +9,9 @@ export default function Home() {
 
   const [selectedSpeech, setSelectedSpeech] = useState<null | any>(null);
   const [selectedVideo, setSelectedVideo] = useState<null | string>(null); 
+  // NEW: State to handle the Op-Ed reader modal
+  const [selectedArticle, setSelectedArticle] = useState<null | any>(null);
 
-  // Logic for the Reading Progress Bar (for the Speech Reader)
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -543,6 +544,198 @@ I commend this motion to the House.`,
     }
   ];
 
+  // NEW: The Articles Data Array
+  const articles = [
+    {
+      id: "article-1",
+      publisher: "The Telegraph",
+      logo: "/the-telegraph.jpg",
+      date: "SEP 2025",
+      title: "Angela Rayner is about to launch a devastating assault on business",
+      desc: "The gap between what Britain needs and what this Government is offering grows with each passing day.",
+      content: `As Parliament returns this week, one of Labour’s priorities for this session is delivering its “back to the 1970s” legislation to bolster the power of trade unions– and their cheerleader, Angela Rayner.
+
+It is perhaps ironic that union members in both Parliament and the Deputy Prime Minister’s own department are on strike. But that is fast becoming the new normal. And a natural consequence of reducing strike ballot thresholds and rewarding militancy with higher wage settlements.
+
+Businesses look on with horror as measures never contemplated by the Blair or Brown governments are about to be enacted into law.
+
+Onerous powers to facilitate the recolonisation of the private sector with trade union collective bargaining. An administrative cost headwind of £5bn a year, on the Government’s own figures. The prospect of hundreds of thousands more employment tribunal cases to add to the existing backlog of half a million. And a new “fair work” quango to bring prosecutions of businesses that will be stuffed full of activist lawyers and ex-trade union officials.
+
+In normal times, businesses might feel that the Treasury would share concerns and advocate a sensible rethink or pause on measures that will reduce employment and lower growth.
+
+But these are not normal times, and in Rachel Reeves vs Rayner, it is clear who calls the shots.
+
+Indeed, in recent LabourList polling of Labour members, Rayner’s favourability was + 59 while that of Reeves was -26.
+
+So, while employment and vacancies both fall and the number of working age people on benefits increases, the Government barrels ahead with its bill for unemployment – despite many in the Treasury and the Department for Business impotently despairing.
+
+No wonder that, like fresher’s week friends, the useful idiots from the business community queuing up to support Labour before the last election have all melted away.
+
+Not a single business has ever endorsed all the measures in the 300-page, job-destroying, employment rights bill and the main business groups, including the Confederation of British Industry and the Institute of Directors are uncharacteristically united in seeking to oppose its worst impacts.
+
+The gap between what British business needs and what this punishing Government is offering them grows with each passing day.
+
+Instead of certainty and confidence, for the second September running, businesses face daily speculation of a horror show of potential tax raids in a Budget that does not yet have a date.
+
+The only thing that is certain is the uncertainty.
+
+The fact that the Government is clearly unwilling or incapable of cutting its spending to fit its already record levels of taxation causes consternation amongst entrepreneurs and executives.
+
+They see how Labour’s first year in office imposed huge headwinds on Britain’s business.
+
+The tone was set early with the manifesto-breaking £25bn jobs tax that punished aspiration and hit those on the lowest incomes the most.
+
+As we and groups like UK Hospitality and the British Retail Consortium told them, taxing jobs is one of the most destructive ways to raise revenues.
+
+It reduces employment, pushes people into welfare, and creates a two-tier economy – weighing down the most productive parts of the economy to support the least productive.
+
+We warned them not to go ahead with it but they ploughed on regardless, cheered by the large body of Left-wing backbenchers in the Labour Party who are at best indifferent to wrecking the private sector.
+
+And that was just the start. Breaking yet another promise, Labour’s death tax on family businesses is already impacting the incentives to grow or continue the nation’s millions of family businesses.
+
+This punishing change brings a small chain of family butchers, bakers or hairdressers into scope, with most having no prospect of finding the cash to pay a large and unexpected tax bill without selling the business.
+
+Just like the tax on jobs, it will syphon money away from wages, investment and the profits which fuel growth in the UK.
+
+Other anti-business measures include higher business rates, imposing green packaging levies and extra tax on air travellers.
+
+Already announced but yet to bite are Labour’s carbon tariff, which will add to the cost of almost every imported item, higher energy costs through yoking the UK to the EU Emissions Trading Scheme and an audit reform and corporate governance bill, which will be another volley of red tape and legally imposed wokery which no business ever asked for.
+
+No wonder that business confidence is at the lowest levels recorded since many of the surveys began.
+
+Ultimately, this is a government that may be in thrall to Rayner and the unions but doesn’t understand business.
+
+What’s worse is that it has no apparent interest in finding out what they want.
+
+The UK now languishes in 29th place in the ranking of global competitiveness. This is alongside the largest brain drain since the 1960s. Yet no alarm bells seem to be going off in 10 Downing Street, or the Treasury.
+
+While Labour may be sanguine about business failure or fall back on tropes about well-paid bosses, those who will pay the harshest price for Labour’s economic vandalism are those in “generation jobless”.
+
+So as term restarts, spare a thought for the growing number of young people struggling to get their first job after school or college, chasing a rapidly drying pool of vacancies thanks to Labour’s choices.`,
+      sources: [{ label: "Read Article on The Telegraph", url: "https://www.telegraph.co.uk/" }]
+    },
+    {
+      id: "article-2",
+      publisher: "The Sun",
+      logo: "/the-sun.jpg",
+      date: "APR 2025",
+      title: "Labour has landed itself in a steel crisis of its own making",
+      desc: "Nationalisation should be a last resort, but steel is vital for our security, resilience and economy.",
+      content: `Yesterday laid bare the madness at the heart of Labour’s steel policy, and the incompetence which seems endemic to their government. 
+
+As with many of their policies, they don’t have a plan. They have been left scrambling for a solution and the future for British steelmaking now hangs the balance because of them.
+
+History often has a habit of repeating itself. 
+
+Neil Kinnock once pointed out the stupidity of ‘hiring taxis to scuttle round a city handing out redundancy notices to its own workers’, and Labour’s eco madness has hit similar heights. 
+
+Red Ed Miliband closed our last coal mine months ago, only to then be forced into importing coal from abroad to keep the Scunthorpe blast furnaces open. 
+
+Net Zero will not work in its current form. And this government continuing to peddle its dogma is putting things like our steel industry at risk.
+
+Of course, we all want to stop climate change. 
+
+But, given Britain only contributes to 1 per cent of global emissions, the best way to do that is by having a thriving private sector which can innovate and develop cutting-edge technology. 
+
+It’s businesses, not the state that will do this. But clearly this hasn’t yet dawned on Keir Starmer.
+
+Now the wheels are coming off for Keir Starmer. Having broken over 100 promises since becoming Labour leader, he once again proved he is the master of saying one thing and doing the opposite. 
+
+He now says ‘the world as we knew it has gone’, claiming we are in a different world. In some ways he is right, but only because he lives in a completely different world to the one the rest of us do.
+
+He is completely out of touch and needs to get real. 
+
+On the economy, on tariffs and Net Zero he can’t stop scoring own goals. He must urgently change course.
+
+If Starmer meant what he said about living in a new world, he would be able to see sense as the Conservative Party have on Net Zero. 
+
+The PM must admit that Net Zero by 2050 is impossible without crippling businesses and punishing families with higher costs and higher bills.
+
+Stamer’s much-vaunted electric vehicle changes, which only brought us closer to where we were a year ago, is tinkering at the edges. 
+
+Continuing to enforce extra levies, increasing burdens on businesses and shackling industry with sales bans, these minor changes are just not equal to the challenge.
+
+It’s about time the PM used Brexit to our advantage. We all know Starmer is an arch Remoaner. 
+
+He energetically campaigned for a second referendum, and he voted to block the UK making its own laws 48 times in Parliament. 
+
+But as the result of Brexit he’s been dealt a good hand of cards and now is his chance to seriously play it in the national interest.
+
+Given his Chancellor has crushed growth, a US trade deal would be the ultimate prize. 
+
+For anyone who doesn’t have a thinly veiled desire to rejoin the EU, this deal would unleash opportunities for British businesses to benefit from international trade like never before. 
+
+We laid the foundations for it, negotiating with President Trump in his first term. Now he’s back in the White House, the appetite for it in Washington is there. 
+
+Starmer must pick up and dust off what we’ve already hammered out. 
+
+But, despite tariffs hammering our car sector and punishing British businesses, they seem very half hearted. 
+
+Labour ministers, more focused on hating Trump than helping Britain, took five months to even begin face to face talks. 
+
+They lost the services of Britain’s top trade negotiator, and they wasted time cosying up to the EU with nothing to show for it.
+
+Try as they might to blame everyone else for our economic woes, common sense readers of the Sun will see through it. 
+
+Labour has trashed the economy, sent taxes to record highs and tried to strangle businesses in reams of red tape. 
+
+Brexit could be Britain’s life jacket, but the Prime Minister won’t wear it. He must put his partisan instincts aside and act in the national interest.
+
+The final nail in the coffin is Labour’s punishing tax regime. 
+
+Already, we have seen an exodus of the innovators, the risk takers and the entrepreneurs. Not to mention salaries being slashed, 25,000 job losses and counting and inflation ticking up. 
+
+Yet Starmer dogmatically ploughs on, his words increasingly divorced from reality. 
+
+It’s a classic case of government by press release – style over substance, slogans over solutions. 
+
+What we need now is honesty about the challenges we face, and the courage to make decisions that actually solve them. 
+
+But that’s not how the current occupants of Downing Street operate.
+
+Keir Starmer is stuck in the past. A politician more comfortable recycling old ideas than generating new ones. 
+
+He hasn’t evolved. And unless he does, it’s the rest of us who will pay the price: higher taxes, lost jobs, soaring bills, and a weakened economy.
+
+Britain deserves better than managed decline masked as progress. If Starmer truly believes we’re living in a new world, then it’s time he started acting like it.`,
+      sources: [{ label: "Read Article on The Sun", url: "https://www.thesun.co.uk/" }]
+    },
+    {
+      id: "article-3",
+      publisher: "The Telegraph",
+      logo: "/the-telegraph.jpg",
+      date: "DEC 2025",
+      title: "Only business can generate growth, and only the Conservatives can be the party of business",
+      desc: "Plummeting confidence under Labour promises a ‘January of discontent’",
+      content: `Somewhere far from Whitehall, a businessman or woman is putting together the year-end accounts for their small business. It might be a firm of electricians, a bakery or a small, specialised manufacturer. It might be a recent start-up or a family business which has operated in its community for generations. Either way a product of risk-taking and long, very possibly unpaid, hours.
+
+Staring at those accounts and budget for the year ahead, after Labour’s Budget our business leader finds that they no longer add up. The £25bn jobs tax, the rise in business rates and wages, the trade union-inspired Employment Rights Bill and – if there is anything left after these – the prospect of a new family business “death tax” to be paid by the next generation.
+
+Businesses tend not to fail in December, but I predict a “January of Discontent” as bills fall due, auditors fret about going concerns and punch-drunk business owners throw in the towel.
+
+And yet our Western democracies have never needed the problem-solving power of business and private capital more. Without business there is no growth. It is only business which creates jobs and prosperity and pays the taxes to fund the public services our populations have come to expect as a right.
+
+It is astonishing how few politicians fully understand this. If they did, they would be much more wary of piling on not just taxes but red and green tape. They wouldn’t be imposing political agendas around diversity, gender and climate. They wouldn’t be trying to rig market outcomes via regulators and driving up the cost of energy, labour and risk capital.
+
+Relative to other economies, the UK over-taxes both property and employment, hitting our businesses and high streets hard. Right now, instead of a government that lauds wealth creators, we see the real-life version of Ayn Rand’s Atlas Shrugged playing out in the UK: despair and capitulation by businesses, loss of motivation to start new enterprises and a brain drain as our best and brightest go elsewhere.
+
+The better news is that we Conservatives can fix this. We know how to, and in Kemi Badenoch we have a leader with business experience who completely understands the need. My own mentor and the inspiration for me to go into politics after a decades-long career in business, Lord Young, understood this and is most famous for his time as secretary of state for enterprise.
+
+At recent elections we’ve struggled to attract the support of younger voters but with their side-hustles and gig-economy entrepreneurialism, they are natural Conservatives if we can convince them we are on their side. Margaret Thatcher’s majorities were built with the support of an army of small business owners and the self-employed, hungry for a government that rewarded aspiration.
+
+We will develop the detail over the coming months but this is an area where principles translate straightforwardly into policy. Lower taxes, a smaller state which does fewer things better and a government willing to stand up and defend wealth-creating risk-takers. The difference is that this time our plans must be credible, fully prepared in advance and ready to implement on day one of our next term in office.
+
+As a lifelong Conservative, I have been immensely frustrated that past leaders have talked about cutting red tape when running for office only to preside over governments that added to regulatory burdens: “talking Right but governing Left”, as Kemi puts it so well.
+
+As we formulate our own reforms, the example of what Vivek Ramaswamy and Elon Musk plan to do to cut bureaucracy in the US as part of Donald Trump’s presidency will provide an exciting case study. In sharp contrast to plummeting UK business confidence under Labour, the world’s largest economy is already attracting record capital inflows in anticipation. And if Labour were in any way serious about growth, Starmer himself would be on the next flight to the US seeking to pick up talks about a UK-US trade deal.
+
+There is a narrow window of opportunity for this as the new administration firms up its priorities between now and mid-January. It would build on the genuine achievements of our time in office with trade deals secured with Japan, Australia, New Zealand and the UK joining the CPTPP which formally takes place this week.
+
+Finally, one of my tasks as shadow business secretary is to seek out talent for our next term in government. The Conservative Party needs more parliamentary candidates and MPs with serious business backgrounds. They must be proper conservatives first; our party has been damaged enough by straying from its core principles. But with that proviso, the country we inherit will require decisive action of the sort in which business excels. Government is the ultimate scale opportunity in that it touches more lives than any individual business does so this is a worthy mission.`,
+      sources: [{ label: "Read Article on The Telegraph", url: "https://www.telegraph.co.uk/" }]
+    }
+  ];
+
   return (
     <main className="min-h-screen bg-slate-950 text-white overflow-x-hidden selection:bg-blue-500/30 font-sans">
       
@@ -599,28 +792,24 @@ I commend this motion to the House.`,
         </div>
       </div>
 
-      {/* Speeches Grid - UPDATED LIQUID GLASS */}
+      {/* Speeches Grid */}
       <div className="max-w-5xl mx-auto px-6 space-y-48 pb-48 relative z-10">
         <motion.section {...slideUp} className="space-y-16">
           <div className="text-center max-w-4xl mx-auto">
             <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-8">Speeches</h2>
             <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
-              Speeches are long form way of communicating your message. They can be intensely political and detail heavy. But they're easy to get wrong. Below are three speeches I wrote that were written in the context of landmark political moments, and aimed to strike an authoritative tone whilst conveying our narrative.
+              Speeches are a long form way of communicating your message. They can be intensely political and detail heavy. But they're easy to get wrong. Below are three speeches I wrote that were written in the context of landmark political moments, and aimed to strike an authoritative tone whilst conveying our narrative.
             </p>
           </div>
           
           <div className="grid md:grid-cols-3 gap-8 text-left">
             {speeches.map((s, i) => (
               <div key={i} className="group relative flex flex-col justify-between h-full bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.15)] hover:-translate-y-2 hover:bg-white/20 transition-all duration-500 overflow-hidden">
-                
-                {/* Subtle Inner Glow */}
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-                
                 <div className="relative z-10">
                   <h3 className="text-xl font-bold mb-4 text-white leading-tight">{s.title}</h3>
                   <p className="text-slate-200 text-sm leading-relaxed mb-8 group-hover:text-white transition-colors">{s.desc}</p>
                 </div>
-                
                 <button onClick={() => setSelectedSpeech(s)} className="relative z-10 inline-flex items-center text-sm font-bold text-blue-300 hover:text-white transition-colors gap-2 group-hover:translate-x-1 duration-300">
                   Read Transcript <span aria-hidden="true">→</span>
                 </button>
@@ -629,14 +818,32 @@ I commend this motion to the House.`,
           </div>
         </motion.section>
 
-        {/* Writing Section */}
-        <motion.section {...slideUp} className="space-y-16 text-center">
-          <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase">Writing</h2>
-          <div className="py-24 border-y border-slate-800">
-            <h3 className="text-4xl md:text-5xl font-bold mb-8 tracking-tight text-slate-100 leading-tight">
-              "The verifiable truth about digital infrastructure."
-            </h3>
-            <p className="text-blue-400 uppercase tracking-widest text-sm font-bold">The Spectator • 2026</p>
+        {/* OP-EDS & COMMENTARY GRID */}
+        <motion.section {...slideUp} className="space-y-16">
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-8">Op-Eds & Commentary</h2>
+            <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
+              Placing thought leadership in national titles requires cutting through the noise. Here are three pieces of commentary designed to drive the political agenda and shape the business narrative.
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-3 gap-8 text-left">
+            {articles.map((a, i) => (
+              <div key={i} className="group relative flex flex-col justify-between h-full bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.15)] hover:-translate-y-2 hover:bg-white/20 transition-all duration-500 overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                <div className="relative z-10">
+                  {/* Dynamic Logo Insertion */}
+                  <div className="h-8 mb-6 flex items-center justify-start">
+                    <img src={a.logo} alt={a.publisher} className="h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
+                  </div>
+                  <h3 className="text-xl font-bold mb-4 text-white leading-tight">{a.title}</h3>
+                  <p className="text-slate-200 text-sm leading-relaxed mb-8 group-hover:text-white transition-colors">{a.desc}</p>
+                </div>
+                <button onClick={() => setSelectedArticle(a)} className="relative z-10 inline-flex items-center text-sm font-bold text-blue-300 hover:text-white transition-colors gap-2 group-hover:translate-x-1 duration-300">
+                  Read Article <span aria-hidden="true">→</span>
+                </button>
+              </div>
+            ))}
           </div>
         </motion.section>
 
@@ -672,7 +879,6 @@ I commend this motion to the House.`,
           <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[200] flex items-end justify-center bg-slate-950/90 backdrop-blur-sm p-0 md:p-8">
             <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }} transition={{ type: "spring", damping: 30, stiffness: 300 }} className="w-full max-w-4xl h-[95vh] bg-[#0f172a] border border-slate-700 rounded-t-[2rem] overflow-y-auto shadow-2xl relative flex flex-col">
               
-              {/* Reading Progress Bar */}
               <motion.div className="sticky top-0 left-0 right-0 h-1.5 bg-blue-500 z-[210] origin-left" style={{ scaleX }} />
 
               <div className="sticky top-0 right-0 flex justify-end pb-8 z-10 bg-[#0f172a]/95 px-8 pt-8">
@@ -684,7 +890,6 @@ I commend this motion to the House.`,
                   <span className="text-blue-400 text-xs font-bold tracking-widest uppercase mb-4 block">{selectedSpeech.date}</span>
                   <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-8">{selectedSpeech.title}</h2>
                   
-                  {/* Key Takeaways Tags */}
                   <div className="flex flex-wrap gap-3">
                     {selectedSpeech.takeaways.map((t: string, idx: number) => (
                       <span key={idx} className="px-3 py-1 bg-slate-800 border border-slate-700 text-slate-400 text-[10px] font-bold uppercase tracking-wider rounded-full">
@@ -704,6 +909,56 @@ I commend this motion to the House.`,
           </motion.div>
         )}
       </AnimatePresence>
+
+      {/* INTERACTIVE ARTICLE READER MODAL */}
+      <AnimatePresence>
+        {selectedArticle && (
+          <motion.div initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="fixed inset-0 z-[200] flex items-end justify-center bg-slate-950/90 backdrop-blur-sm p-0 md:p-8">
+            <motion.div initial={{ y: "100%" }} animate={{ y: 0 }} exit={{ y: "100%" }} transition={{ type: "spring", damping: 30, stiffness: 300 }} className="w-full max-w-4xl h-[95vh] bg-[#0f172a] border border-slate-700 rounded-t-[2rem] overflow-y-auto shadow-2xl relative flex flex-col">
+              
+              <motion.div className="sticky top-0 left-0 right-0 h-1.5 bg-blue-500 z-[210] origin-left" style={{ scaleX }} />
+
+              <div className="sticky top-0 right-0 flex justify-end pb-8 z-10 bg-[#0f172a]/95 px-8 pt-8">
+                <button onClick={() => setSelectedArticle(null)} className="text-slate-400 hover:text-white transition-colors text-xs font-bold uppercase tracking-widest">Close Reader</button>
+              </div>
+
+              <div className="px-8 md:px-20 pb-20">
+                <div className="mb-12 border-b border-slate-800 pb-12">
+                  <span className="text-blue-400 text-xs font-bold tracking-widest uppercase mb-4 block">{selectedArticle.date}</span>
+                  
+                  {/* Dynamic Logo for Reader Mode */}
+                  <img src={selectedArticle.logo} alt={selectedArticle.publisher} className="h-10 mb-6 object-contain" />
+                  
+                  <h2 className="text-4xl md:text-5xl font-bold text-white tracking-tight leading-tight mb-8">{selectedArticle.title}</h2>
+                </div>
+
+                <div className="prose prose-invert prose-lg max-w-none">
+                  <p className="text-slate-300 text-xl leading-[1.8] whitespace-pre-line font-light">
+                    {selectedArticle.content}
+                  </p>
+                </div>
+
+                {selectedArticle.sources && (
+                  <div className="mt-16 pt-8 border-t border-slate-800">
+                    <h4 className="text-xs font-bold tracking-widest text-slate-500 uppercase mb-4">Verifiable Source</h4>
+                    <ul className="space-y-2">
+                      {selectedArticle.sources.map((source: any, idx: number) => (
+                        <li key={idx}>
+                          <a href={source.url} target="_blank" className="text-blue-400 hover:text-white text-sm transition-colors font-bold flex items-center gap-2">
+                            <span>•</span> {source.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+
+              </div>
+            </motion.div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+
     </main>
   );
 }
