@@ -264,12 +264,187 @@ Thank you.`,
     },
     {
       id: "speech-2",
-      date: "JAN 2026",
-      title: "Managing Geopolitical Risk & Change",
-      desc: "How organizations stay ahead of shifting political landscapes and trade tensions.",
-      takeaways: ["Trade Security", "Policy Forecasting", "Risk Mitigation"],
-      content: "PASTE FULL TEXT OF FILE 2 HERE...",
-      sources: [{ label: "Audit Office Report", url: "#" }]
+      date: "APR 2025",
+      title: "Steel Industry (Special Measures) Bill",
+      desc: "An opening parliamentary speech scrutinizing the rushed nationalisation of UK steelmaking and its economic consequences.",
+      takeaways: ["Industrial Strategy", "Public Finance Accountability", "Energy Policy"],
+      content: `Thank you, Mr Speaker, and I thank the Secretary of State for taking the time to brief me last night ahead of today's sittings, and for sight of today's statement.
+
+Mr Speaker, to fail to prepare is to prepare to fail.
+
+What a way to proceed.
+
+Only the sixth occasion since the end of the Second World War. Recalling Parliament to debate a Bill published only 90 minutes ago.
+
+This would be conduct unbecoming of a parish council.
+
+Our country, our economy, this Parliament, all deserve better.
+
+And it's why the amendment in my name at least puts a sunset on today's Bill, and I hope the Government will accept that.
+
+Mr Speaker, today is not a failure by the steel workers of Scunthorpe and elsewhere, their families, or the community.
+
+They've toiled for generations to ensure we have the primary steel we need for our structures, our safety, and our security.
+
+This is a failure on the Government's watch.
+
+Let's be crystal clear what today means: we are entering a tunnel with only one exit.
+
+This is a botched nationalisation plan, revealing the Government has no plan.
+
+In Government, we acted to secure Port Talbot and were negotiating a plan, including British Steel's preferred option of an electric arc furnace in Teesside.
+
+That would have limited job losses and kept Scunthorpe running in transition.
+
+Once again, when Labour negotiates, Britain loses.
+
+The Chagos Islands, US tariffs, the train drivers, and now this latest crisis.
+
+Mr Speaker, a bad toolmaker blames his tools, but this time they've only themselves to blame.
+
+And Mr Speaker, the British people must not have lost their winter fuel allowance and their disability benefits in order that China can walk away from its liabilities, leaving British taxpayers picking up the bills.
+
+Mr Speaker, steel needs energy and energy needs steel.
+
+No one denies that steel making has been difficult for some time.
+
+But Scunthorpe is the victim of a dishonesty that pretends it is better for the environment to ship coke halfway around the planet than from down the road.
+
+And an energy policy that has driven costs higher than any competing nation.
+
+No one is more responsible for this than the Energy Secretary and the Prime Minister who appointed him.
+
+Millions of other businesses are also struggling with their energy bills.
+
+It's why the Chancellor's tax choices have been so devastating.
+
+Steel may be the first domino to topple.
+
+But glass, chemicals, cars and concrete are other industries at risk.
+
+Does the Prime Minister envisage a whole series of Saturday sittings?
+
+Or will he change course today and cut energy costs now?
+
+Not in 10 years time, when it's too late.
+
+I thank the Shadow Minister for giving way.
+
+We are hearing about the efforts of the previous government to save British Steel.
+
+And we have found a somewhat confusing account about the deal that the now Shadow Leader of the Opposition has negotiated.
+
+If such a deal existed, can we perhaps see a record of any of that?
+
+Well I think my colleague the Right Honourable Member for Saffron Walden has been extremely clear that the deal was being negotiated.
+
+And the point about a deal being negotiated is that that deal will be concluded after the election.
+
+Mr Speaker, it didn't need to be this way.
+
+The Honourable Member for Brigham and Ingham has been warning of a growing threat since last September.
+
+The Mayor of Teesside has been asking the Government to present their plan for steel for months.
+
+Rob Waltham, the Leader of North Lincolnshire Council, has done all he can to support steel making in Scunthorpe.
+
+And on the 4th of April, Ed Conway of Sky News showed the world that we were just days away from the risk of furnaces shutting down.
+
+But the Government didn't listen and they didn't act.
+
+It's been almost 10 days since Parliament debated a substantive piece of Government business.
+
+Rather than this rushed minute-to-midnight bill, we could have used that time for proper debate, a proper process and proper scrutiny.
+
+It's indefensible incompetence.
+
+Despite years to prepare, it's clear they came into office with no plan.
+
+There is no steel strategy.
+
+There is no industrial strategy.
+
+There is no export strategy.
+
+And now we have this botched nationalisation.
+
+The Secretary of State says his preference is to find a commercial partner.
+
+But let's be serious.
+
+Does the Government think this is likely, after attacking business with a 25billion jobs tax and his bill to create the most hostile environment for employers since the 1970s?
+
+In case the Chancellor hasn't noticed, on her watch, all of the flow is investors leaving this country.
+
+And, Mr Speaker, everything we have heard this morning says the Government hasn't really thought this through.
+
+Steel making is complex, intense, it's highly operational.
+
+Iron ore has to reach thousands of degrees to become molten iron.
+
+It's a dangerous process and there is a serious risk to health.
+
+Yet in Birmingham, Labour struggled to collect the bins from midnight, the Chancellor will be standing behind the payroll, settling every bill with every supplier, even if they're in arrears.
+
+If these decisions no longer sit with the plant owner, where does the buck stop?
+
+Old Admiralty building?
+
+The Treasury?
+
+Number 10?
+
+And how can other steel providers have any confidence in the impartiality of the Government's steel strategy if the umpire is now on the pitch?
+
+What assessment has the Government made of the impact of this bill on public finances?
+
+There is no impact assessment.
+
+The Government's been talking to British Steel for nine months.
+
+They've put at least 500 million of taxpayers' money on the table.
+
+Surely by now, he and his officials have a comprehensive understanding of the costs of the actions he is asking us to vote on.
+
+What disrespect to this House for the Government to come along today to recall Parliament after nine months in which they failed to land a deal and ask us for a blank cheque.
+
+This is no way to run a corner shop, let alone the country.
+
+Has anyone in Government asked the ONS?
+
+Well, perhaps I'll take an intervention if they want to answer this question, which is, has anyone in Government asked the ONS whether, as a result of the powers that are being taken in this Bill, British Steel will, from today, be classified as publicly owned, whether it's been formally nationalised or not?
+
+No answers.
+
+Mr Speaker, the markets know, the world knows, and we know the Chancellor's headroom was inadequate from the very moment she sat down about her last emergency budget.
+
+Only this week, the Bank of England took the unprecedented step of cancelling the planned sale of Government bonds.
+
+Today's botched nationalisation will further unsettle international markets.
+
+So can the Government tell us when the Chancellor will be presenting her next emergency budget and what plans she has to update the markets?
+
+So there we are, Mr Speaker.
+
+A disrespect, a disrespect, a disrespect of this House.
+
+The Government has treated Parliament with disdain, nine months of dither and delay.
+
+A botched nationalisation of steelmaking with the British taxpayer on the hook.
+
+It's crystal clear, when Labour negotiates, Britain loses.
+
+This is not a serious Government.
+
+It's a Government shaped by events, not one in control of them.
+
+It's a Government by sulky teenager, not sharing their plans, not answering the question, and when it goes wrong, it's everyone's fault but theirs.
+
+Thank you very much, Mr Speaker.`,
+      sources: [
+        { label: "Hansard Official Record", url: "https://hansard.parliament.uk/" },
+        { label: "Parliamentary Bill Documents", url: "https://bills.parliament.uk/" }
+      ]
     },
     {
       id: "speech-3",
@@ -297,7 +472,6 @@ Thank you.`,
           <motion.h1 variants={sentence} initial="hidden" animate="visible" className="text-[7vw] md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 whitespace-nowrap">
             {headline.split("").map((char, index) => (<motion.span key={index} variants={letter} className="inline-block">{char === " " ? "\u00A0" : char}</motion.span>))}
           </motion.h1>
-          {/* UPDATED TEXT BELOW */}
           <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5, duration: 1.5 }} className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4">
             I'm experienced at <span className="text-white font-medium border-b border-slate-600">joining up the dots between Westminster and business</span>. I take complex issues and communicate them as compelling stories. You can see some of those stories below.
           </motion.p>
