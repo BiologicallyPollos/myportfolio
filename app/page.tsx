@@ -599,21 +599,29 @@ I commend this motion to the House.`,
         </div>
       </div>
 
-      {/* Speeches & Transcripts Grid */}
+      {/* Speeches Grid - UPDATED LIQUID GLASS */}
       <div className="max-w-5xl mx-auto px-6 space-y-48 pb-48 relative z-10">
         <motion.section {...slideUp} className="space-y-16">
-          <div className="text-center">
-            <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-4">Speeches & Transcripts</h2>
+          <div className="text-center max-w-4xl mx-auto">
+            <h2 className="text-sm font-bold tracking-widest text-blue-400 uppercase mb-8">Speeches</h2>
+            <p className="text-xl md:text-2xl text-slate-300 font-light leading-relaxed">
+              Speeches are long form way of communicating your message. They can be intensely political and detail heavy. But they're easy to get wrong. Below are three speeches I wrote that were written in the context of landmark political moments, and aimed to strike an authoritative tone whilst conveying our narrative.
+            </p>
           </div>
-          <div className="grid md:grid-cols-3 gap-6 text-left">
+          
+          <div className="grid md:grid-cols-3 gap-8 text-left">
             {speeches.map((s, i) => (
-              <div key={i} className="group relative flex flex-col justify-between h-full bg-[#0f172a] border border-slate-800 p-8 rounded-sm hover:border-slate-600 transition-colors duration-300">
-                <div className="absolute top-0 left-0 w-full h-1 bg-slate-800 group-hover:bg-blue-500 transition-colors duration-300 rounded-t-sm" />
-                <div>
-                  <h3 className="text-xl font-bold mb-4 text-slate-50 leading-tight group-hover:text-white transition-colors">{s.title}</h3>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-8">{s.desc}</p>
+              <div key={i} className="group relative flex flex-col justify-between h-full bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.15)] hover:-translate-y-2 hover:bg-white/20 transition-all duration-500 overflow-hidden">
+                
+                {/* Subtle Inner Glow */}
+                <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+                
+                <div className="relative z-10">
+                  <h3 className="text-xl font-bold mb-4 text-white leading-tight">{s.title}</h3>
+                  <p className="text-slate-200 text-sm leading-relaxed mb-8 group-hover:text-white transition-colors">{s.desc}</p>
                 </div>
-                <button onClick={() => setSelectedSpeech(s)} className="inline-flex items-center text-sm font-bold text-blue-400 hover:text-blue-300 transition-colors gap-2">
+                
+                <button onClick={() => setSelectedSpeech(s)} className="relative z-10 inline-flex items-center text-sm font-bold text-blue-300 hover:text-white transition-colors gap-2 group-hover:translate-x-1 duration-300">
                   Read Transcript <span aria-hidden="true">→</span>
                 </button>
               </div>
