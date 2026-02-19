@@ -449,11 +449,97 @@ Thank you very much, Mr Speaker.`,
     {
       id: "speech-3",
       date: "DEC 2025",
-      title: "The Business of Westminster",
-      desc: "Analyzing the evolving relationship between corporate strategy and public policy.",
-      takeaways: ["Corporate Diplomacy", "Lobbying Transparency", "Fiscal Impact"],
-      content: "PASTE FULL TEXT OF FILE 3 HERE...",
-      sources: [{ label: "Hansard Society Records", url: "#" }]
+      title: "Supporting Seasonal Work & Hospitality",
+      desc: "A parliamentary closing speech defending the hospitality sector against punitive taxation and rigid employment laws.",
+      takeaways: ["Hospitality Sector", "Business Rates", "Seasonal Employment"],
+      content: `Madam Deputy Speaker, we have heard today from Members across this House who understand a fundamental truth.
+
+The hospitality sector is the cornerstone not only of our economy, but of our society too.
+
+It binds our communities together.
+
+From the pubs and bars to the cafés and garden centres, these are the places where life happens.
+
+But more than that, hospitality provides the next generation with that vital first step on the career ladder.
+
+It offers the flexible, seasonal work that allows young people to earn their first wage and learn the dignity of labour.
+
+As we have heard from my Honourable and my Right Honourable friends, pubs, hotels and restaurants are hurting as the direct result of the Chancellor’s Budget.
+
+In my own South Downs constituency, more than a dozen venues have contacted me just in the last 24 hours.
+
+Ruth and Martin at The Cricketers in Duncton described to me their rates going up by £4,500-£5,000 a year.
+
+The Fox Goes Free in Charlton has been a public house for over 400 years and like every pub, makes a huge contribution to its community. Their business rates bill has increased by more than £13,000 next year.
+
+I’ve heard similar, and worse, from the Murrell Arms in Eastergate, the Half Moon Inn at Northchapel, the Labouring Man in Coldwaltham, and the Onslow Arms in Loxwood.
+
+But it doesn’t stop there Madam Deputy Speaker.
+
+It is exactly the same story from The Bridge Inn in Amberley, the Star and Garter in East Dean, the Bricklayers Arms in Midhurst, and the Black Horse in Byworth.
+
+Every pub and hotel in my rural constituency are bearing out exactly the figures from UK Hospitality and the British beer and pub association that we have heard many times today.
+
+Tom Richardson at the Three Moles in Selham explained how the turnover basis of assessing rateable values is flawed.
+
+His Employment costs are up thanks to the government’s NI hike.
+
+Electricity costs and heating oil have more than doubled.
+
+At Tottington Manor Hotel in Henfield they have to find nearly £50,000 due to the rise in employment costs alone.
+
+Pub and hotel owners are at the end of their tether.
+
+One landlord has not been able to draw a wage from their pub in the last 6 months.
+
+Another told me of working 7 days a week, 16 to 17 hours a day just trying to keep their pub open.
+
+The cost of hiring staff has become so prohibitive that owners are doing more and more themselves in one of the ‘doom loops’ the Chancellor seems to specialise in.
+
+Similar points were raised by colleagues on these benches.
+
+[INSERT REFERENCES TO COLLEAGUES]
+
+Madam Deputy Speaker, the full frontal attack on seasonal work is buried deep within their (Un)Employment Bill.
+
+This Government has stubbornly refused to listen to reason.
+
+They insist on imposing "guaranteed hours" on businesses that rely entirely on the tides of the seasons.
+
+Like King Canute, they are legislating to outlaw seasonality.
+
+It means that if a seaside café hires a student to wait outside tables in the summer rush, Labour want them legally forced to offer them the same hours as the shutters come down for Autumn.
+
+The demise of strawberries and cream sellers at Wimbledon.
+
+It’ll even be like the death of Father Christmases and assistant elves in shopping centres across the nation.
+
+It is bureaucratic madness!
+
+Yet Ministers press on, deaf to the pleas of the very businesses who provide the jobs that the growing army of unemployed on their watch need.
+
+Madam Deputy Speaker, you don’t protect workers by bankrupting employers.
+
+You don’t support high streets, pubs and restaurants by taxing them into submission.
+
+We Conservatives understand business.
+
+Unlike the current Cabinet, many of us have worked in business ourselves.
+
+We stand with the risk-takers who create wealth, not the bureaucrats who destroy it.
+
+That is why our motion today supports seasonal, flexible, and part time working.
+
+We will take 250,000 high street businesses and pubs out of business rates entirely, paid for with the welfare reforms they don’t have the backbone to deliver.
+
+And we will repeal all of the job destroying measures in the disastrous (Un)Employment Bill.
+
+Madam Deputy Speaker, we back the engines of our economy, or do we allow this Government to drive them to the wall?
+
+I commend this motion to the House.`,
+      sources: [
+        { label: "Hansard Official Record", url: "https://hansard.parliament.uk/" }
+      ]
     }
   ];
 
