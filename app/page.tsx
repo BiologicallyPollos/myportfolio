@@ -721,7 +721,7 @@ Relative to other economies, the UK over-taxes both property and employment, hit
 
 The better news is that we Conservatives can fix this. We know how to, and in Kemi Badenoch we have a leader with business experience who completely understands the need. My own mentor and the inspiration for me to go into politics after a decades-long career in business, Lord Young, understood this and is most famous for his time as secretary of state for enterprise.
 
-At recent elections we’ve struggled to attract the support of younger voters but with their side-hustles and gig-economy entrepreneurialism, they are natural Conservatives if we can convince them we are on their side. Margaret Thatcher’s majorities were built with the support of an army of small business owners and the self-employed, hungry for a government that rewarded aspiration.
+At recent elections we have struggled to attract the support of younger voters but with their side-hustles and gig-economy entrepreneurialism, they are natural Conservatives if we can convince them we are on their side. Margaret Thatcher’s majorities were built with the support of an army of small business owners and the self-employed, hungry for a government that rewarded aspiration.
 
 We will develop the detail over the coming months but this is an area where principles translate straightforwardly into policy. Lower taxes, a smaller state which does fewer things better and a government willing to stand up and defend wealth-creating risk-takers. The difference is that this time our plans must be credible, fully prepared in advance and ready to implement on day one of our next term in office.
 
