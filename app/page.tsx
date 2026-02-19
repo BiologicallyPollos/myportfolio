@@ -1,7 +1,8 @@
 "use client";
 
 import React, { useState } from 'react';
-import { motion, AnimatePresence, useScroll, useSpring } from 'framer-motion';
+// 1. Added useTransform to our imports for the parallax effect
+import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
 
 export default function Home() {
@@ -12,11 +13,16 @@ export default function Home() {
   const [selectedArticle, setSelectedArticle] = useState<null | any>(null);
 
   const { scrollYProgress } = useScroll();
+  
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
   });
+
+  // 2. NEW: Parallax logic for the hero background
+  // This tells the background to move downwards by 40% as the user scrolls to the bottom of the page
+  const heroBgY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
 
   const headline = "Hello, I'm Josh Funnell";
   
@@ -739,11 +745,38 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
       
       {/* Hero Section */}
       <section className="relative h-screen flex flex-col items-center justify-center text-center px-4 overflow-hidden">
-        <div className="absolute inset-0 z-0 flex pointer-events-none w-full h-full">
-          <motion.div initial={{ x: -150, opacity: 0 }} animate={{ x: 0, opacity: 0.4 }} transition={{ duration: 1.8, ease: "easeOut" }} className="absolute left-0 top-0 bottom-0 w-1/2 h-full" style={{ backgroundImage: `url('/CoL Cover Photo.jpg')`, backgroundSize: 'cover', backgroundPosition: 'left center', maskImage: 'linear-gradient(to right, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)' }} />
-          <motion.div initial={{ x: 150, opacity: 0 }} animate={{ x: 0, opacity: 0.4 }} transition={{ duration: 1.8, ease: "easeOut", delay: 0.2 }} className="absolute right-0 top-0 bottom-0 w-1/2 h-full" style={{ backgroundImage: `url('/Parliament Cover Photo.jpg')`, backgroundSize: 'cover', backgroundPosition: 'right center', maskImage: 'linear-gradient(to left, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%)' }} />
-          <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950 z-10" />
-        </div>
+        
+        {/* 3. NEW: The Parallax and Breathing Container */}
+        <motion.div style={{ y: heroBgY }} className="absolute inset-0 z-0 flex pointer-events-none w-full h-[130%] -top-[15%]">
+          
+          <motion.div 
+            initial={{ x: -150, opacity: 0, scale: 1 }} 
+            animate={{ x: 0, opacity: 0.4, scale: 1.05 }} 
+            transition={{ 
+              x: { duration: 1.8, ease: "easeOut" }, 
+              opacity: { duration: 1.8, ease: "easeOut" },
+              scale: { duration: 20, repeat: Infinity, repeatType: "reverse", ease: "easeInOut" } 
+            }} 
+            className="absolute left-0 top-0 bottom-0 w-1/2 h-full" 
+            style={{ backgroundImage: `url('/CoL Cover Photo.jpg')`, backgroundSize: 'cover', backgroundPosition: 'left center', maskImage: 'linear-gradient(to right, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to right, black 70%, transparent 100%)' }} 
+          />
+          
+          <motion.div 
+            initial={{ x: 150, opacity: 0, scale: 1 }} 
+            animate={{ x: 0, opacity: 0.4, scale: 1.05 }} 
+            transition={{ 
+              x: { duration: 1.8, ease: "easeOut", delay: 0.2 }, 
+              opacity: { duration: 1.8, ease: "easeOut", delay: 0.2 },
+              scale: { duration: 20, repeat: Infinity, repeatType: "reverse", ease: "easeInOut", delay: 0.2 } 
+            }} 
+            className="absolute right-0 top-0 bottom-0 w-1/2 h-full" 
+            style={{ backgroundImage: `url('/Parliament Cover Photo.jpg')`, backgroundSize: 'cover', backgroundPosition: 'right center', maskImage: 'linear-gradient(to left, black 70%, transparent 100%)', WebkitMaskImage: 'linear-gradient(to left, black 70%, transparent 100%)' }} 
+          />
+
+        </motion.div>
+        
+        {/* Static Gradient Overlay */}
+        <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950 z-10 pointer-events-none" />
         
         <div className="relative z-[100] w-full max-w-7xl">
           <motion.h1 variants={sentence} initial="hidden" animate="visible" className="text-[7vw] md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 whitespace-nowrap">
@@ -830,7 +863,6 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
               <div key={i} className="group relative flex flex-col justify-between h-full bg-white/10 backdrop-blur-xl border border-white/20 p-8 rounded-2xl shadow-xl hover:shadow-[0_20px_40px_-15px_rgba(255,255,255,0.15)] hover:-translate-y-2 hover:bg-white/20 transition-all duration-500 overflow-hidden">
                 <div className="absolute inset-0 bg-gradient-to-br from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
                 <div className="relative z-10">
-                  {/* Dynamic Logo Insertion */}
                   <div className="h-8 mb-6 flex items-center justify-start">
                     <img src={a.logo} alt={a.publisher} className="h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity duration-300" />
                   </div>
@@ -845,11 +877,10 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
           </div>
         </motion.section>
 
-        {/* --- FOOTER & CONTACT BUTTONS --- */}
+        {/* FOOTER & CONTACT BUTTONS */}
         <footer className="pt-32 flex flex-col items-center border-t border-slate-800 pb-12">
           
           <div className="flex flex-col sm:flex-row gap-6 mb-12">
-            {/* LinkedIn Button */}
             <a 
               href="https://www.linkedin.com/in/joshfunnell/" 
               target="_blank" 
@@ -862,7 +893,6 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
               Connect on LinkedIn
             </a>
 
-            {/* Email Button */}
             <a 
               href="mailto:josh.funnell1@hotmail.com" 
               className="group flex items-center justify-center gap-3 px-8 py-4 bg-white/5 backdrop-blur-md text-white border border-white/20 rounded-full font-bold hover:bg-white hover:text-slate-950 transition-all duration-300 shadow-lg hover:-translate-y-1"
