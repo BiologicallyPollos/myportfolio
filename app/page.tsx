@@ -3,6 +3,8 @@
 import React, { useState } from 'react';
 import { motion, AnimatePresence, useScroll, useSpring, useTransform } from 'framer-motion';
 import useEmblaCarousel from 'embla-carousel-react';
+import AnimatedName from './components/AnimatedName';
+import ConnectTheDotsText from './components/ConnectTheDotsText';
 
 export default function Home() {
   const [emblaRef] = useEmblaCarousel({ loop: true, align: 'center', containScroll: false });
@@ -20,18 +22,6 @@ export default function Home() {
   });
 
   const heroBgY = useTransform(scrollYProgress, [0, 1], ["0%", "40%"]);
-
-  const headline = "Hello, I'm Josh Funnell";
-  
-  const sentence = {
-    hidden: { opacity: 1 },
-    visible: { opacity: 1, transition: { staggerChildren: 0.08, delayChildren: 0.5 } },
-  };
-
-  const letter = {
-    hidden: { opacity: 0, y: 10 },
-    visible: { opacity: 1, y: 0, transition: { duration: 0.5 } },
-  };
 
   const slideUp = {
     initial: { opacity: 0, y: 30 },
@@ -776,10 +766,11 @@ Finally, one of my tasks as shadow business secretary is to seek out talent for 
         <div className="absolute inset-0 bg-gradient-to-b from-slate-950/50 via-transparent to-slate-950 z-10 pointer-events-none" />
         
         <div className="relative z-[100] w-full max-w-7xl">
-          <motion.h1 variants={sentence} initial="hidden" animate="visible" className="text-[7vw] md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-8 whitespace-nowrap">
-            {headline.split("").map((char, index) => (<motion.span key={index} variants={letter} className="inline-block">{char === " " ? "\u00A0" : char}</motion.span>))}
+          <motion.h1 initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} className="text-[7vw] md:text-7xl lg:text-8xl font-bold tracking-tight text-white mb-4 whitespace-nowrap">
+            Hello, I'm
           </motion.h1>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 2.5, duration: 1.5 }} className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4">
+          <AnimatedName />
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ delay: 3.5, duration: 1.5 }} className="text-xl md:text-2xl text-slate-300 leading-relaxed font-light tracking-wide max-w-3xl mx-auto px-4 mt-8">
             I'm experienced at <span className="text-white font-medium border-b border-slate-600">joining up the dots between Westminster and business</span>. I take complex issues and communicate them as compelling stories. You can see some of those stories below.
           </motion.p>
         </div>
