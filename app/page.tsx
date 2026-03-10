@@ -159,7 +159,7 @@ A Bill which will destroy job opportunities for young people whilst topping up L
 
 And the opposition to this terrible Bill in Parliament has been led by your Conservative shadow business team.
 
-David Hunt and Andrew Sharpe in the House of Lords.
+David Hunt, and Andrew Sharpe in the House of Lords.
 
 My shadow Ministers Harriet Baldwin, Gareth Davies and my PPS, Ali Griffiths in the Commons.
 
