@@ -41,7 +41,7 @@ export default function Home() {
   };
 
   const videos = [
-    "/Video-0.mp4"
+    "/Video-0.mp4",
     "/Video-1.mp4",
     "/Video-2.mp4",
     "/Video-3.mp4",
